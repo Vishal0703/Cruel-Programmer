@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
 	public Transform groundCheck;
 	public AudioClip thud;
 
+
+
 	// player can move?
 	// we want this public so other scripts can access it but we don't want to show in editor as it might confuse designer
 	[HideInInspector]
@@ -35,9 +37,9 @@ public class PlayerMovement : MonoBehaviour
 	bool isRunning = false;
 
 
-	Rigidbody2D rigidbody;
+	//Rigidbody2D rigidbody;
 	AudioSource audio;
-	//Rigidbody2D rgb;
+	Rigidbody2D rgbd;
 	Vector3 orig_pos;
 	// store the layer the player is on (setup in Awake)
 	int _playerLayer;
@@ -47,16 +49,16 @@ public class PlayerMovement : MonoBehaviour
 
 	void Awake()
 	{
-		// get a reference to the components we are going to be changing and store a reference for efficiency purposes
-		
+        // get a reference to the components we are going to be changing and store a reference for efficiency purposes
 
-		rigidbody = GetComponent<Rigidbody2D>();
-		if (rigidbody == null) // if Rigidbody is missing
-			Debug.LogError("Rigidbody2D component missing from this gameobject");
 
-		audio = GetComponent<AudioSource>();
-		// determine the player's specified layer
-		_playerLayer = this.gameObject.layer;
+        rgbd = GetComponent<Rigidbody2D>();
+        if (rgbd == null) // if Rigidbody is missing
+            Debug.LogError("Rigidbody2D component missing from this gameobject");
+
+        audio = GetComponent<AudioSource>();
+        // determine the player's specified layer
+        _playerLayer = this.gameObject.layer;
 
 		// determine the platform's specified layer
 		_platformLayer = LayerMask.NameToLayer("Platform");
@@ -84,7 +86,8 @@ public class PlayerMovement : MonoBehaviour
 
 
 		// get the current vertical velocity from the rigidbody component
-		_vy = rigidbody.velocity.y;
+		_vy = rgbd.velocity.y;
+		
 
 		// Check to see if character is grounded by raycasting from the middle of the player
 		// down to the groundCheck position and see if collected with gameobjects on the
@@ -110,9 +113,26 @@ public class PlayerMovement : MonoBehaviour
 		if (!GameManager.gm.isleftAvailable && _vx < 0f)
 			_vx = 0f;
 
-		rigidbody.velocity = new Vector2(_vx * moveSpeed, _vy);
+		if (!GameManager.gm.isCircularLevel)
+			rgbd.velocity = new Vector2(_vx * moveSpeed, _vy);
+		else
+		{
+			if (GameManager.gm.center == null)
+				Debug.LogError("Center Level but no center object assigned");
+			else
+			{
+				Vector2 dir = GameManager.gm.center.position - transform.position;
+				dir = dir.normalized;
+				float sin_theta = dir.y / dir.magnitude;
+				float cos_theta = dir.x / dir.magnitude;
+				Vector2 vel = new Vector2();
+				vel.x = rgbd.velocity.x + _vx * sin_theta;
+				vel.y = rgbd.velocity.y - _vx * cos_theta;
+				rgbd.velocity = vel;
+				//RotatePlayer(dir);
+			}
+		}
 		
-
 		// if moving up then don't collide with platform layer
 		// this allows the player to jump up through things on the platform layer
 		// NOTE: requires the platforms to be on a layer named "Platform"
@@ -125,12 +145,18 @@ public class PlayerMovement : MonoBehaviour
 
 	}
 
+	void RotatePlayer(Vector2 dir)
+    {
+		float theta = Mathf.Tan(dir.y/dir.x);
+		transform.eulerAngles = new Vector3(0f, 0f, 180f);
+    }
+
 	void DoJump()
 	{
 		// reset current vertical motion to 0 prior to jump
 		_vy = 0f;
 		// add a force in the up direction
-		rigidbody.AddForce(new Vector2(0, jumpForce));
+		rgbd.AddForce(new Vector2(0, jumpForce));
 	}
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -139,7 +165,7 @@ public class PlayerMovement : MonoBehaviour
 		//	audio.PlayOneShot(thud);
 
 		if (collision.gameObject.CompareTag("ground"))
-			audio.PlayOneShot(thud);
+			GetComponent<AudioSource>().PlayOneShot(thud);
 
 		if (collision.gameObject.CompareTag("obstacle"))
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
