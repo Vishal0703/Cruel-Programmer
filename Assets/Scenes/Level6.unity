@@ -2835,10 +2835,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4395056913637984808, guid: 99beee384a2a446478b2735773674f09,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 14.537261
+      objectReference: {fileID: 0}
+    - target: {fileID: 4395056913637984808, guid: 99beee384a2a446478b2735773674f09,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 14.537261
+      objectReference: {fileID: 0}
+    - target: {fileID: 4395056913637984808, guid: 99beee384a2a446478b2735773674f09,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 14.537261
+      objectReference: {fileID: 0}
     - target: {fileID: 4395056913637984811, guid: 99beee384a2a446478b2735773674f09,
         type: 3}
       propertyPath: m_SortingOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4395056913637984811, guid: 99beee384a2a446478b2735773674f09,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 700308513400324522, guid: de544d28eafc6024e915976d9c1652c7,
+        type: 3}
+    - target: {fileID: 4395056913637984814, guid: 99beee384a2a446478b2735773674f09,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 0.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 4395056913637984814, guid: 99beee384a2a446478b2735773674f09,
+        type: 3}
+      propertyPath: jumpForce
+      value: 600
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99beee384a2a446478b2735773674f09, type: 3}

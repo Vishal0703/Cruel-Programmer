@@ -94,11 +94,38 @@ public class PlayerMovement : MonoBehaviour
 		// whatIsGround layer
 		isGrounded = Physics2D.Linecast(transform.position, groundCheck.position, whatIsGround);
 
+		
+
+		// Change the actual velocity on the rigidbody
+		if (!GameManager.gm.isleftAvailable && _vx < 0f)
+			_vx = 0f;
+
+		Vector2 dir = new Vector2(0f,1f);
+		if (!GameManager.gm.isCircularLevel)
+			rgbd.velocity = new Vector2(_vx * moveSpeed, _vy);
+		else
+		{
+			if (GameManager.gm.center == null)
+				Debug.LogError("Center Level but no center object assigned");
+			else
+			{
+				dir = GameManager.gm.center.position - transform.position;
+				dir = dir.normalized;
+				float sin_theta = dir.y / dir.magnitude;
+				float cos_theta = dir.x / dir.magnitude;
+				Vector2 vel = new Vector2();
+				vel.x = rgbd.velocity.x + _vx * moveSpeed * sin_theta;
+				vel.y = rgbd.velocity.y - _vx * moveSpeed * cos_theta;
+				rgbd.velocity = vel;
+				RotatePlayer(dir);
+			}
+		}
+
 		if (GameManager.gm.isJumpAvailable)
 		{
 			if (isGrounded && Input.GetButtonDown("Jump")) // If grounded AND jump button pressed, then allow the player to jump
 			{
-				DoJump();
+				DoJump(dir);
 			}
 
 			// If the player stops jumping mid jump and player is not yet falling
@@ -109,30 +136,6 @@ public class PlayerMovement : MonoBehaviour
 			}
 		}
 
-		// Change the actual velocity on the rigidbody
-		if (!GameManager.gm.isleftAvailable && _vx < 0f)
-			_vx = 0f;
-
-		if (!GameManager.gm.isCircularLevel)
-			rgbd.velocity = new Vector2(_vx * moveSpeed, _vy);
-		else
-		{
-			if (GameManager.gm.center == null)
-				Debug.LogError("Center Level but no center object assigned");
-			else
-			{
-				Vector2 dir = GameManager.gm.center.position - transform.position;
-				dir = dir.normalized;
-				float sin_theta = dir.y / dir.magnitude;
-				float cos_theta = dir.x / dir.magnitude;
-				Vector2 vel = new Vector2();
-				vel.x = rgbd.velocity.x + _vx * sin_theta;
-				vel.y = rgbd.velocity.y - _vx * cos_theta;
-				rgbd.velocity = vel;
-				//RotatePlayer(dir);
-			}
-		}
-		
 		// if moving up then don't collide with platform layer
 		// this allows the player to jump up through things on the platform layer
 		// NOTE: requires the platforms to be on a layer named "Platform"
@@ -147,16 +150,26 @@ public class PlayerMovement : MonoBehaviour
 
 	void RotatePlayer(Vector2 dir)
     {
-		float theta = Mathf.Tan(dir.y/dir.x);
-		transform.eulerAngles = new Vector3(0f, 0f, 180f);
+		dir = -dir;
+		float theta = Mathf.Acos(Vector2.Dot(dir, new Vector2(0f, 1f))/(dir.magnitude));
+		theta = theta * 180 / Mathf.PI;
+		theta = 180 - theta;
+        if (dir.x <= 0)
+            theta = -theta;
+        transform.eulerAngles = new Vector3(0f, 0f, theta);
     }
 
-	void DoJump()
+	void DoJump(Vector2 dir)
 	{
 		// reset current vertical motion to 0 prior to jump
-		_vy = 0f;
+		//_vy = 0f;
+		//float tan_theta = dir.y / dir.x;
+		//float vx1 = rgbd.velocity.x;
+		//float vy1 = rgbd.velocity.y;
+		//vx1 = -tan_theta * vy1;
+		//rgbd.velocity = new Vector2(vx1, vy1);
 		// add a force in the up direction
-		rgbd.AddForce(new Vector2(0, jumpForce));
+		rgbd.AddForce(dir.normalized*jumpForce);
 	}
 
     private void OnCollisionEnter2D(Collision2D collision)
