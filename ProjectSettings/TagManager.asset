@@ -8,6 +8,7 @@ TagManager:
   - goal
   - ground
   - Light
+  - spring
   layers:
   - Default
   - TransparentFX

@@ -182,6 +182,8 @@ public class PlayerMovement : MonoBehaviour
 
 		if (collision.gameObject.CompareTag("obstacle"))
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		
+			
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
