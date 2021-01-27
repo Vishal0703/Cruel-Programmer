@@ -87,12 +87,15 @@ public class PlayerMovement : MonoBehaviour
 
 		// get the current vertical velocity from the rigidbody component
 		_vy = rgbd.velocity.y;
-		
+
 
 		// Check to see if character is grounded by raycasting from the middle of the player
 		// down to the groundCheck position and see if collected with gameobjects on the
 		// whatIsGround layer
-		isGrounded = Physics2D.Linecast(transform.position, groundCheck.position, whatIsGround);
+		if (GameManager.gm.isAirJumpAllowed)
+			isGrounded = true;
+		else
+			isGrounded = Physics2D.Linecast(transform.position, groundCheck.position, whatIsGround);
 
 		
 

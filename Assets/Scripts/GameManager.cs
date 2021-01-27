@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public bool isleftAvailable = true;
     public bool isLightAvailable = true;
     public bool isCircularLevel = false;
+    public bool isAirJumpAllowed = false;
     //To check for center
     public Transform center;
 
