@@ -20,5 +20,10 @@ public class UpdateGravity : MonoBehaviour
             Debug.Log($"dir is {dir}");
             Physics2D.gravity = dir;
         }
+        if(GameManager.gm.isGravityReversed)
+        {
+            Physics2D.gravity *= -1f;
+        }
+        
     }
 }

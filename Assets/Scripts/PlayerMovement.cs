@@ -84,7 +84,10 @@ public class PlayerMovement : MonoBehaviour
 			isRunning = false;
 		}
 
-
+		if (GameManager.gm.isGravityReversed)
+			_vx = -_vx;
+		if (GameManager.gm.isMotionReversed)
+			_vx = -_vx;
 		// get the current vertical velocity from the rigidbody component
 		_vy = rgbd.velocity.y;
 
@@ -100,7 +103,9 @@ public class PlayerMovement : MonoBehaviour
 		
 
 		// Change the actual velocity on the rigidbody
-		if (!GameManager.gm.isleftAvailable && _vx < 0f)
+		if (!GameManager.gm.isLeftAvailable && _vx < 0f)
+			_vx = 0f;
+		if (!GameManager.gm.isRightAvailable && _vx > 0f)
 			_vx = 0f;
 
 		Vector2 dir = new Vector2(0f,1f);
@@ -153,7 +158,8 @@ public class PlayerMovement : MonoBehaviour
 
 	void RotatePlayer(Vector2 dir)
     {
-		dir = -dir;
+		if(!GameManager.gm.isGravityReversed)
+			dir = -dir;
 		float theta = Mathf.Acos(Vector2.Dot(dir, new Vector2(0f, 1f))/(dir.magnitude));
 		theta = theta * 180 / Mathf.PI;
 		theta = 180 - theta;
@@ -164,6 +170,8 @@ public class PlayerMovement : MonoBehaviour
 
 	void DoJump(Vector2 dir)
 	{
+		if (GameManager.gm.isGravityReversed)
+			dir = -dir;
 		// reset current vertical motion to 0 prior to jump
 		//_vy = 0f;
 		//float tan_theta = dir.y / dir.x;
@@ -173,6 +181,8 @@ public class PlayerMovement : MonoBehaviour
 		//rgbd.velocity = new Vector2(vx1, vy1);
 		// add a force in the up direction
 		rgbd.AddForce(dir.normalized*jumpForce);
+		if(GameManager.gm.isJumpCountRestricted)
+			GameManager.gm.restrictedJumpCount--;
 	}
 
     private void OnCollisionEnter2D(Collision2D collision)

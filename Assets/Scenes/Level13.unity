@@ -651,7 +651,7 @@ GameObject:
   - component: {fileID: 457714668}
   m_Layer: 0
   m_Name: Spikes (1)
-  m_TagString: obstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -679,7 +679,7 @@ EdgeCollider2D:
   m_GameObject: {fileID: 457714666}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 3fb092f316157f44d9237ac4e636d098, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1558,7 +1558,7 @@ GameObject:
   - component: {fileID: 504168146}
   m_Layer: 0
   m_Name: Spikes (4)
-  m_TagString: obstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1586,7 +1586,7 @@ EdgeCollider2D:
   m_GameObject: {fileID: 504168144}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 3fb092f316157f44d9237ac4e636d098, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2018,7 +2018,7 @@ GameObject:
   - component: {fileID: 781984608}
   m_Layer: 0
   m_Name: Spikes (6)
-  m_TagString: obstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2046,7 +2046,7 @@ EdgeCollider2D:
   m_GameObject: {fileID: 781984606}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 3fb092f316157f44d9237ac4e636d098, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2647,7 +2647,7 @@ GameObject:
   - component: {fileID: 1582320839}
   m_Layer: 0
   m_Name: Spikes (2)
-  m_TagString: obstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2675,7 +2675,7 @@ EdgeCollider2D:
   m_GameObject: {fileID: 1582320837}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 3fb092f316157f44d9237ac4e636d098, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -3247,7 +3247,7 @@ GameObject:
   - component: {fileID: 1857081549}
   m_Layer: 0
   m_Name: Spikes
-  m_TagString: obstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3371,7 +3371,7 @@ EdgeCollider2D:
   m_GameObject: {fileID: 1857081545}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 3fb092f316157f44d9237ac4e636d098, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -3408,7 +3408,7 @@ GameObject:
   - component: {fileID: 1881121868}
   m_Layer: 0
   m_Name: Spikes (5)
-  m_TagString: obstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3436,7 +3436,7 @@ EdgeCollider2D:
   m_GameObject: {fileID: 1881121866}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 3fb092f316157f44d9237ac4e636d098, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -4801,7 +4801,7 @@ GameObject:
   - component: {fileID: 1984680209}
   m_Layer: 0
   m_Name: Spikes (3)
-  m_TagString: obstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4829,7 +4829,7 @@ EdgeCollider2D:
   m_GameObject: {fileID: 1984680207}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 3fb092f316157f44d9237ac4e636d098, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -5285,6 +5285,26 @@ PrefabInstance:
       propertyPath: isAirJumpAllowed
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2003886110137936769, guid: 7f21a82a9b048f944855af32e72e52b9,
+        type: 3}
+      propertyPath: isGravityReversed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2003886110137936769, guid: 7f21a82a9b048f944855af32e72e52b9,
+        type: 3}
+      propertyPath: isMotionReversed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2003886110137936769, guid: 7f21a82a9b048f944855af32e72e52b9,
+        type: 3}
+      propertyPath: isJumpCountRestricted
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2003886110137936769, guid: 7f21a82a9b048f944855af32e72e52b9,
+        type: 3}
+      propertyPath: restrictedJumpCount
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2003886110137936770, guid: 7f21a82a9b048f944855af32e72e52b9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5712,7 +5732,7 @@ PrefabInstance:
     - target: {fileID: 5324578166108549563, guid: 4e6fe6614745e76498ed9c1e838e26f0,
         type: 3}
       propertyPath: m_Text
-      value: All Controls Available
+      value: Test
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e6fe6614745e76498ed9c1e838e26f0, type: 3}
