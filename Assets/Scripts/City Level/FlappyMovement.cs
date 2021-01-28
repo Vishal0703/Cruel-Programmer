@@ -15,8 +15,6 @@ public class FlappyMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        start = false;
-        Time.timeScale = .001f;
     }
 
     // Update is called once per frame
@@ -27,10 +25,6 @@ public class FlappyMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
-            start = true;
-
-            Time.timeScale = 1f;
-
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
     }

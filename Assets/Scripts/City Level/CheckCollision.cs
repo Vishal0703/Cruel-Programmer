@@ -11,6 +11,7 @@ public class CheckCollision : MonoBehaviour
     private void Start()
     {
         nextSceneToLoad = SceneManager.GetActiveScene().buildIndex + 1;
+        PauseGame();
 
     }
 
@@ -20,6 +21,11 @@ public class CheckCollision : MonoBehaviour
         {
             string sceneName = SceneManager.GetActiveScene().name;
             SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+        }
+
+        if (Input.anyKeyDown)
+        {
+            ResumeGame();
         }
     }
 
@@ -40,5 +46,15 @@ public class CheckCollision : MonoBehaviour
         {
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpHeight), ForceMode2D.Impulse);
         }
+    }
+
+    void PauseGame()
+    {
+        Time.timeScale = 0;
+    }
+
+    void ResumeGame()
+    {
+        Time.timeScale = 1;
     }
 }

@@ -6,54 +6,54 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/CityLevel/Regular Level.unity
+    path: Assets/Scenes/City Level/Regular Level.unity
     guid: 1d5bfddade4150a478e4d8359ddebd82
   - enabled: 1
-    path: Assets/Scenes/CityLevel/Giant Level.unity
+    path: Assets/Scenes/City Level/Giant Level.unity
     guid: 87611b29f8b738e419b076f46dde9f84
   - enabled: 1
-    path: Assets/Scenes/CityLevel/Invisible Level.unity
+    path: Assets/Scenes/City Level/Invisible Level.unity
     guid: fefa0c5cedc44444b87aa1fb1ddfbf95
   - enabled: 1
-    path: Assets/Scenes/CityLevel/Flappy Level.unity
+    path: Assets/Scenes/City Level/Flappy Level.unity
     guid: 5072336ddd4698348924ba6fedb4e0ff
   - enabled: 1
-    path: Assets/Scenes/CityLevel/Moving Platform Level.unity
+    path: Assets/Scenes/City Level/Moving Platform Level.unity
     guid: 52f37f674dfcf564cbc0eb7bc08b9f61
   - enabled: 1
-    path: Assets/Scenes/CityLevel/Bouncy Spikes Level.unity
+    path: Assets/Scenes/City Level/Bouncy Spikes Level.unity
     guid: 4098a23a8fbc8434884ce449f506f647
   - enabled: 1
-    path: Assets/Scenes/CityLevel/Reverse Gravity Level.unity
+    path: Assets/Scenes/City Level/Reverse Gravity Level.unity
     guid: b5b796c9f781d404b9e58eb957baba33
   - enabled: 1
-    path: Assets/Scenes/FactoryLevel/Control Platform Level.unity
+    path: Assets/Scenes/Factory Level/Control Platform Level.unity
     guid: 34a8a676fbab7524486622c1b5bfcc28
   - enabled: 1
-    path: Assets/Scenes/FactoryLevel/Flappy Factory Level.unity
+    path: Assets/Scenes/Factory Level/Flappy Factory Level.unity
     guid: 79785d98c5b89d74fae616be40406d16
   - enabled: 1
-    path: Assets/Scenes/FactoryLevel/Gravity Level.unity
+    path: Assets/Scenes/Factory Level/Gravity Level.unity
     guid: 4dd7f3b3f7fb26444be78b30a7175d5e
   - enabled: 1
-    path: Assets/Scenes/FactoryLevel/Wrapping Level.unity
+    path: Assets/Scenes/Factory Level/Wrapping Level.unity
     guid: 43dedc0bd2ab889489dae09b7d62297c
   - enabled: 1
-    path: Assets/Scenes/FactoryLevel/Rotate Level.unity
+    path: Assets/Scenes/Factory Level/Rotate Level.unity
     guid: 79cd9edbd26a93146a479e49d13ba1db
   - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 6eeeedf90c00a5e4796f90358ccb21b4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level2.unity
     guid: c853b5581a788114a9e83bdae256d194
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level3.unity
     guid: f95a12ab30c90fe49a2d399f100414bc
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level4.unity
     guid: a9804d6d3f906ed4d9e205932444a0b2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level5.unity
     guid: 06e501763edc49a46bc96604aa1bd170
   m_configObjects: {}
