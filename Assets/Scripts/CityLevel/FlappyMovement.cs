@@ -9,6 +9,7 @@ public class FlappyMovement : MonoBehaviour
     [SerializeField] float jumpForce = 600f;
     bool start = false;
 
+
     // Start is called before the first frame update
     void Start()
     {
