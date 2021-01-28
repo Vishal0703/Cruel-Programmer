@@ -664,7 +664,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 457714666}
   m_LocalRotation: {x: -0, y: -0, z: -0.5631194, w: -0.8263756}
-  m_LocalPosition: {x: -0.2, y: 3.72, z: 0}
+  m_LocalPosition: {x: -0.2, y: 2.7, z: 0}
   m_LocalScale: {x: 0.99186665, y: 0.99186665, z: 0.99186665}
   m_Children: []
   m_Father: {fileID: 1744329548}
@@ -2509,6 +2509,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1499095413}
+  - component: {fileID: 1499095414}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -2535,6 +2536,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1499095414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499095412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5779446747ea5bc4aa065e8dd89083d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateSpeed: 5
 --- !u!1 &1578601281
 GameObject:
   m_ObjectHideFlags: 0
@@ -3201,7 +3215,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1752734716}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.2, y: 1.57, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 11.458814, y: 11.458814, z: 11.458814}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3960,7 +3974,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1914872977}
   m_LocalRotation: {x: -0, y: -0, z: -0.851427, w: 0.5244732}
-  m_LocalPosition: {x: 3.69, y: 3.48, z: 0}
+  m_LocalPosition: {x: 3.5, y: 2.6, z: 0}
   m_LocalScale: {x: 0.2513184, y: 2.9340885, z: 0.65699}
   m_Children:
   - {fileID: 2066161389}
@@ -5285,16 +5299,6 @@ PrefabInstance:
       propertyPath: isAirJumpAllowed
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2003886110137936769, guid: 7f21a82a9b048f944855af32e72e52b9,
-        type: 3}
-      propertyPath: isSlowMotion
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2003886110137936769, guid: 7f21a82a9b048f944855af32e72e52b9,
-        type: 3}
-      propertyPath: slowMotionTimeScale
-      value: 0.3
-      objectReference: {fileID: 0}
     - target: {fileID: 2003886110137936770, guid: 7f21a82a9b048f944855af32e72e52b9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5722,7 +5726,7 @@ PrefabInstance:
     - target: {fileID: 5324578166108549563, guid: 4e6fe6614745e76498ed9c1e838e26f0,
         type: 3}
       propertyPath: m_Text
-      value: Time Dilated
+      value: Rotating Level
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e6fe6614745e76498ed9c1e838e26f0, type: 3}
