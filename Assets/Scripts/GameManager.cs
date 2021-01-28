@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.U2D;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
     public bool isGravityReversed = false;
     public bool isMotionReversed = false;
     public bool isSlowMotion = false;
+    public bool isControlGravity = false;
     [Range(0.0f, 1.0f)]
     public float slowMotionTimeScale = 1f;
     public bool isJumpCountRestricted = false;

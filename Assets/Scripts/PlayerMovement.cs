@@ -129,18 +129,28 @@ public class PlayerMovement : MonoBehaviour
 			}
 		}
 
-		if (GameManager.gm.isJumpAvailable)
+		if (!GameManager.gm.isControlGravity)
 		{
-			if (isGrounded && Input.GetButtonDown("Jump")) // If grounded AND jump button pressed, then allow the player to jump
+			if (GameManager.gm.isJumpAvailable)
 			{
-				DoJump(dir);
-			}
+				if (isGrounded && Input.GetButtonDown("Jump")) // If grounded AND jump button pressed, then allow the player to jump
+				{
+					DoJump(dir);
+				}
 
-			// If the player stops jumping mid jump and player is not yet falling
-			// then set the vertical velocity to 0 (he will start to fall from gravity)
-			if (Input.GetButtonUp("Jump") && _vy > 0f)
+				// If the player stops jumping mid jump and player is not yet falling
+				// then set the vertical velocity to 0 (he will start to fall from gravity)
+				if (Input.GetButtonUp("Jump") && _vy > 0f)
+				{
+					_vy = -1f;
+				}
+			}
+		}
+		else
+        {
+			if (Input.GetButtonDown("Jump"))
 			{
-				_vy = -1f;
+				GameManager.gm.isGravityReversed = !GameManager.gm.isGravityReversed;
 			}
 		}
 
