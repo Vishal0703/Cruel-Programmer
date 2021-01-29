@@ -10,7 +10,7 @@ public class CheckCollision : MonoBehaviour
     [SerializeField] float jumpHeight = 100f;
     bool isDead = false;
     bool isVictory = false;
-    public bool isPause = true;
+    [SerializeField] public bool isPause;
 
     private void Start()
     {
@@ -26,6 +26,13 @@ public class CheckCollision : MonoBehaviour
         {
             string sceneName = SceneManager.GetActiveScene().name;
             SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (!isPause)
+                PauseGame();
+            else
+                ResumeGame();
         }
 
         if (Input.anyKeyDown)
@@ -73,6 +80,7 @@ public class CheckCollision : MonoBehaviour
     void PauseGame()
     {
         Time.timeScale = 0;
+        Debug.Log("Pause");
         isPause = true;
     }
 
@@ -80,5 +88,6 @@ public class CheckCollision : MonoBehaviour
     {
         Time.timeScale = 1;
         isPause = false;
+        Debug.Log("Resume");
     }
 }
