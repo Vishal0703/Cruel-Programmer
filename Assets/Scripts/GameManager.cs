@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public float slowMotionTimeScale = 1f;
     public bool isJumpCountRestricted = false;
     public int restrictedJumpCount = 3;
+    public float topLevel = 0f;
     //To check for center
     public Transform center;
 
@@ -74,6 +75,7 @@ public class GameManager : MonoBehaviour
     public void DilateTime(float timescale)
     {
         Time.timeScale = timescale;
+        MusicController.instance.setParameterByName("Pitch", timescale);
         //if (!resettimestarted)
         //{
         //    //Debug.Log("Entered dilate time");

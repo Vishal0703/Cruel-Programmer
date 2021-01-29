@@ -64,8 +64,13 @@ public class PlayerMovement : MonoBehaviour
 		_platformLayer = LayerMask.NameToLayer("Platform");
 	}
 
-	// this is where most of the player controller magic happens each game event loop
-	void Update()
+    private void Start()
+    {
+		if (GameManager.gm.isGravityReversed)
+			facingRight = !facingRight;
+    }
+    // this is where most of the player controller magic happens each game event loop
+    void Update()
 	{
 		// exit update if player cannot move or game is paused
 		if (!playerCanMove || (Time.timeScale == 0f))
@@ -158,12 +163,45 @@ public class PlayerMovement : MonoBehaviour
 		// this allows the player to jump up through things on the platform layer
 		// NOTE: requires the platforms to be on a layer named "Platform"
 		//Physics2D.IgnoreLayerCollision(_playerLayer, _platformLayer, (_vy > 0.0f));
-		if ((_vx > 0) || (_vx == 0 && transform.localScale.x > 0))
-			facingRight = true;
+		//if ((_vx > 0) || (_vx == 0 && transform.localScale.x > 0))
+		//	facingRight = true;
 
-		else if ((_vx < 0) || (_vx == 0 && transform.localScale.x < 0))
-			facingRight = false;
+		//else if ((_vx < 0) || (_vx == 0 && transform.localScale.x < 0))
+		//	facingRight = false;
 
+		//if (facingRight)
+		//{
+		//	var thescale = transform.localScale;
+		//	thescale.x *= 1;
+		//	transform.localScale = thescale;
+		//}
+		//else
+  //      {
+		//	var thescale = transform.localScale;
+		//	thescale.x *= -1;
+		//	transform.localScale = thescale;
+		//}
+
+		if(_vx > 0 && !facingRight)
+        {
+			Flip();
+        }
+		else if(_vx<0 && facingRight)
+        {
+			Flip();
+        }
+
+	}
+
+	private void Flip()
+	{
+		// Switch the way the player is labelled as facing.
+		facingRight = !facingRight;
+
+		// Multiply the player's x local scale by -1.
+		Vector3 theScale = transform.localScale;
+		theScale.x *= -1;
+		transform.localScale = theScale;
 	}
 
 	void RotatePlayer(Vector2 dir)
@@ -200,11 +238,14 @@ public class PlayerMovement : MonoBehaviour
 		//if (rigidbody.velocity.y < 0f)
 		//	audio.PlayOneShot(thud);
 
-		if (collision.gameObject.CompareTag("ground"))
-			GetComponent<AudioSource>().PlayOneShot(thud);
+		//if (collision.gameObject.CompareTag("ground"))
+		//	GetComponent<AudioSource>().PlayOneShot(thud);
 
 		if (collision.gameObject.CompareTag("obstacle"))
+		{
+			FMODUnity.RuntimeManager.PlayOneShot("event:/Hurt");
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		}
 		
 			
     }
@@ -214,7 +255,9 @@ public class PlayerMovement : MonoBehaviour
 		if (collision.gameObject.CompareTag("goal"))
 		{
 			Debug.Log("Victory");
-			if(SceneManager.GetActiveScene().buildIndex + 1 < SceneManager.sceneCountInBuildSettings)
+			
+			FMODUnity.RuntimeManager.PlayOneShot("event:/Victory");
+			if (SceneManager.GetActiveScene().buildIndex + 1 < SceneManager.sceneCountInBuildSettings)
 				SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 		}
 	}
