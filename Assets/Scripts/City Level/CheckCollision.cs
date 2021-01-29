@@ -6,13 +6,17 @@ using UnityEngine.SceneManagement;
 public class CheckCollision : MonoBehaviour
 {
     int nextSceneToLoad;
+    string sceneName;
     [SerializeField] float jumpHeight = 100f;
+    bool isDead = false;
+    bool isVictory = false;
 
     private void Start()
     {
+        sceneName = SceneManager.GetActiveScene().name;
         nextSceneToLoad = SceneManager.GetActiveScene().buildIndex + 1;
+        //GetComponent<Animator>().SetBool("isDead", false);
         PauseGame();
-
     }
 
     private void Update()
@@ -25,7 +29,18 @@ public class CheckCollision : MonoBehaviour
 
         if (Input.anyKeyDown)
         {
-            ResumeGame();
+            if (isVictory)
+            {
+                SceneManager.LoadScene(nextSceneToLoad);
+            }
+            else if (!isDead)
+            {
+                ResumeGame();
+            }
+            else
+            {
+                SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+            }
         }
     }
 
@@ -33,17 +48,23 @@ public class CheckCollision : MonoBehaviour
     {
         if (collision.gameObject.tag == "Die")
         {
-            string sceneName = SceneManager.GetActiveScene().name;
-            SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+            PauseGame();
+            isDead = true;
+            GetComponent<Animator>().SetBool("isDead", true);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Hurt");
         }
 
         if (collision.gameObject.tag == "Win")
         {
-            SceneManager.LoadScene(nextSceneToLoad);
+            PauseGame();
+            isVictory = true;
+            GetComponent<Animator>().SetBool("isVictory", true);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Goal");
         }
 
         if (collision.gameObject.tag == "Bounce")
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Jump");
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpHeight), ForceMode2D.Impulse);
         }
     }
