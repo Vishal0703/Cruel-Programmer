@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public GameObject canvas_toenable;
+    public GameObject canvas_todisable;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +17,10 @@ public class MainMenu : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
-            SceneManager.LoadScene("LevelSelector");
+        {
+            canvas_toenable.SetActive(true);
+            canvas_todisable.SetActive(false);
+        }
+            //SceneManager.LoadScene("LevelSelector");
     }
 }

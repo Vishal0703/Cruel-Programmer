@@ -97,6 +97,12 @@ public class GameManager : MonoBehaviour
         //    StartCoroutine(ResetTime());
         //}
     }
+
+    public void LevelSelect(string name)
+    {
+        StartCoroutine(WaitforLoadingNextScene(name));
+    }
+
     public void LevelSelect(int index, float timetoWait = 1f)
     {
         StartCoroutine(WaitforLoadingNextScene(index, timetoWait));
