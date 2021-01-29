@@ -11,6 +11,7 @@ public class CheckCollision : MonoBehaviour
     bool isDead = false;
     bool isVictory = false;
     [SerializeField] public bool isPause;
+    [SerializeField] bool isManualPause = false;
 
     private void Start()
     {
@@ -30,10 +31,10 @@ public class CheckCollision : MonoBehaviour
 
         else if (Input.GetKeyDown(KeyCode.P))
         {
-            if (isPause)
+            if (isManualPause)
                 ResumeGame();
             else
-                PauseGame();
+                ManualPauseGame();
         }
         else if (Input.anyKeyDown)
         {
@@ -84,6 +85,7 @@ public class CheckCollision : MonoBehaviour
     {
         Time.timeScale = 1;
         isPause = false;
+        isManualPause = false;
         Debug.Log("Resume");
     }
 
@@ -91,5 +93,12 @@ public class CheckCollision : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(1.5f);
         SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+    }
+
+    void ManualPauseGame()
+    {
+        Time.timeScale = 0;
+        Debug.Log("Pause");
+        isManualPause = true;
     }
 }
