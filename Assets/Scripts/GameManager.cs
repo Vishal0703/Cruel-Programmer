@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     public Light light;
     bool isPaused = false;
 
-    //AudioSource audio;
+    AudioSource audio;
     private void Awake()
     {
         if(gm==null)
@@ -41,14 +41,17 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //audio = GetComponent<AudioSource>();
-        //audio.PlayOneShot(levelRestartSound);
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+            if (Input.GetKeyDown(KeyCode.P))
         {
             if (!isPaused)
                 DilateTime(0f);
@@ -85,7 +88,8 @@ public class GameManager : MonoBehaviour
     public void DilateTime(float timescale)
     {
         Time.timeScale = timescale;
-        MusicController.instance.setParameterByName("Pitch", timescale);
+        audio.pitch = timescale;
+        //MusicController.instance.setParameterByName("Pitch", timescale);
         //if (!resettimestarted)
         //{
         //    //Debug.Log("Entered dilate time");

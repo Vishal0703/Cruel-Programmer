@@ -43,4 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eea0efe835851f409ab5ae885915aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGMAvalable: 1
+  topLevel: 1
   fmodEvent: event:/Music

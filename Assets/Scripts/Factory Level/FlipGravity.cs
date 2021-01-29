@@ -11,6 +11,7 @@ public class FlipGravity : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        GetComponent<Animator>().SetBool("isJumping", true);
     }
 
     // Update is called once per frame
@@ -22,6 +23,7 @@ public class FlipGravity : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             rb.gravityScale *= -1;
+            transform.localScale *= -1;
         }
     }
 }

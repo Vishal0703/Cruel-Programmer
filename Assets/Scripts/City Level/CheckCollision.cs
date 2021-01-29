@@ -10,6 +10,8 @@ public class CheckCollision : MonoBehaviour
     [SerializeField] float jumpHeight = 100f;
     bool isDead = false;
     bool isVictory = false;
+    [SerializeField] public bool isPause;
+    [SerializeField] bool isManualPause = false;
 
     private void Start()
     {
@@ -21,25 +23,32 @@ public class CheckCollision : MonoBehaviour
 
     private void Update()
     {
+        if(Input.GetKeyDown(KeyCode.M))
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
         if (Input.GetKeyDown(KeyCode.R))
         {
             string sceneName = SceneManager.GetActiveScene().name;
             SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
         }
 
-        if (Input.anyKeyDown)
+        else if (Input.GetKeyDown(KeyCode.P))
         {
-            if (isVictory)
-            {
-                SceneManager.LoadScene(nextSceneToLoad);
-            }
-            else if (!isDead)
+            if (isManualPause)
+                ResumeGame();
+            else
+                ManualPauseGame();
+        }
+        else if (Input.anyKeyDown)
+        {
+            if (isPause)
             {
                 ResumeGame();
             }
-            else
+            if (isVictory)
             {
-                SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+                SceneManager.LoadScene(nextSceneToLoad);
             }
         }
     }
@@ -48,10 +57,10 @@ public class CheckCollision : MonoBehaviour
     {
         if (collision.gameObject.tag == "Die")
         {
-            PauseGame();
-            isDead = true;
             GetComponent<Animator>().SetBool("isDead", true);
             FMODUnity.RuntimeManager.PlayOneShot("event:/Hurt");
+            StartCoroutine("Die");
+            //isDead = true;
         }
 
         if (collision.gameObject.tag == "Win")
@@ -72,10 +81,28 @@ public class CheckCollision : MonoBehaviour
     void PauseGame()
     {
         Time.timeScale = 0;
+        Debug.Log("Pause");
+        isPause = true;
     }
 
     void ResumeGame()
     {
         Time.timeScale = 1;
+        isPause = false;
+        isManualPause = false;
+        Debug.Log("Resume");
+    }
+
+    IEnumerator Die()
+    {
+        yield return new WaitForSecondsRealtime(1.5f);
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+    }
+
+    void ManualPauseGame()
+    {
+        Time.timeScale = 0;
+        Debug.Log("Pause");
+        isManualPause = true;
     }
 }

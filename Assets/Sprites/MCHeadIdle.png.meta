@@ -1,0 +1,824 @@
+fileFormatVersion: 2
+guid: cfb4ac1998989134f8f619571a6a803d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3359640670561270419
+    second: MCHeadIdle_0
+  - first:
+      213: -8786076248745843187
+    second: MCHeadIdle_1
+  - first:
+      213: 6405096626578476644
+    second: MCHeadIdle_2
+  - first:
+      213: -7384286833113296749
+    second: MCHeadIdle_3
+  - first:
+      213: 8066810613139476237
+    second: MCHeadIdle_4
+  - first:
+      213: 7639383498665026413
+    second: MCHeadIdle_5
+  - first:
+      213: 3534363956859766488
+    second: MCHeadIdle_6
+  - first:
+      213: -4226916908464998059
+    second: MCHeadIdle_7
+  - first:
+      213: -739610813107875369
+    second: MCHeadIdle_8
+  - first:
+      213: -3825792713017513742
+    second: MCHeadIdle_9
+  - first:
+      213: -7077309148206279213
+    second: MCHeadIdle_10
+  - first:
+      213: 602376333198452192
+    second: MCHeadIdle_11
+  - first:
+      213: -7880848187049749587
+    second: MCHeadIdle_12
+  - first:
+      213: 6709331383634603775
+    second: MCHeadIdle_13
+  - first:
+      213: -2062242708313652736
+    second: MCHeadIdle_14
+  - first:
+      213: 3256599430711372057
+    second: MCHeadIdle_15
+  - first:
+      213: -652976667154713973
+    second: MCHeadIdle_16
+  - first:
+      213: 2910785243704448688
+    second: MCHeadIdle_17
+  - first:
+      213: 1351264413166133574
+    second: MCHeadIdle_18
+  - first:
+      213: -4779290979828488738
+    second: MCHeadIdle_19
+  - first:
+      213: -1290903501205633253
+    second: MCHeadIdle_20
+  - first:
+      213: -7465369346251115287
+    second: MCHeadIdle_21
+  - first:
+      213: 3675974701161677827
+    second: MCHeadIdle_22
+  - first:
+      213: 975511390871005510
+    second: MCHeadIdle_23
+  - first:
+      213: -5851416191936174238
+    second: MCHeadIdle_24
+  - first:
+      213: 6928725650345554018
+    second: MCHeadIdle_25
+  - first:
+      213: -4624784388268368347
+    second: MCHeadIdle_26
+  - first:
+      213: 8123159699934037219
+    second: MCHeadIdle_27
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MCHeadIdle_0
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 7194
+        width: 688
+        height: 964
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39a72c5c367df9e20800000000000000
+      internalID: 3359640670561270419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCHeadIdle_1
+      rect:
+        serializedVersion: 2
+        x: 2522
+        y: 7194
+        width: 688
+        height: 964
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d06e100d336911680800000000000000
+      internalID: -8786076248745843187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCHeadIdle_2
+      rect:
+        serializedVersion: 2
+        x: 4442
+        y: 7194
+        width: 688
+        height: 964
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46e434b327973e850800000000000000
+      internalID: 6405096626578476644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCHeadIdle_3
+      rect:
+        serializedVersion: 2
+        x: 6362
+        y: 7194
+        width: 688
+        height: 964
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39010b8bf3eb58990800000000000000
+      internalID: -7384286833113296749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCHeadIdle_4
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 6110
+        width: 688
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0f878a438113ff60800000000000000
+      internalID: 8066810613139476237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCHeadIdle_5
+      rect:
+        serializedVersion: 2
+        x: 2522
+        y: 6110
+        width: 688
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d63e8ec11da840a60800000000000000
+      internalID: 7639383498665026413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCHeadIdle_6
+      rect:
+        serializedVersion: 2
+        x: 4442
+        y: 6110
+        width: 688
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d6029bfa459c0130800000000000000
+      internalID: 3534363956859766488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCHeadIdle_7
+      rect:
+        serializedVersion: 2
+        x: 6362
+        y: 6110
+        width: 688
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 559f9d78779f655c0800000000000000
+      internalID: -4226916908464998059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCHeadIdle_8
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 5034
+        width: 688
+        height: 964
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d1daa452ef5cb5f0800000000000000
+      internalID: -739610813107875369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCHeadIdle_9
+      rect:
+        serializedVersion: 2
+        x: 2522
+        y: 5034
+        width: 688
+        height: 964
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f820542ccd08eac0800000000000000
+      internalID: -3825792713017513742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCHeadIdle_10
+      rect:
+        serializedVersion: 2
+        x: 4442
+        y: 5034
+        width: 688
+        height: 964
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d5da8fa3d858cd90800000000000000
+      internalID: -7077309148206279213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCHeadIdle_11
+      rect:
+        serializedVersion: 2
+        x: 6362
+        y: 5034
+        width: 688
+        height: 964
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e5656165121c5800800000000000000
+      internalID: 602376333198452192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCHeadIdle_12
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 3950
+        width: 688
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da35e12145a91a290800000000000000
+      internalID: -7880848187049749587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCHeadIdle_13
+      rect:
+        serializedVersion: 2
+        x: 2522
+        y: 3950
+        width: 688
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffeabe988555c1d50800000000000000
+      internalID: 6709331383634603775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCHeadIdle_14
+      rect:
+        serializedVersion: 2
+        x: 4442
+        y: 3950
+        width: 688
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 002435ade217163e0800000000000000
+      internalID: -2062242708313652736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCHeadIdle_15
+      rect:
+        serializedVersion: 2
+        x: 6362
+        y: 3950
+        width: 688
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9196a439de3c13d20800000000000000
+      internalID: 3256599430711372057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCHeadIdle_16
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 2874
+        width: 688
+        height: 964
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b82ff9b4e2920f6f0800000000000000
+      internalID: -652976667154713973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCHeadIdle_17
+      rect:
+        serializedVersion: 2
+        x: 2522
+        y: 2874
+        width: 688
+        height: 964
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b6d374d1cf256820800000000000000
+      internalID: 2910785243704448688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCHeadIdle_18
+      rect:
+        serializedVersion: 2
+        x: 4442
+        y: 2874
+        width: 688
+        height: 964
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 641e46013d7a0c210800000000000000
+      internalID: 1351264413166133574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCHeadIdle_19
+      rect:
+        serializedVersion: 2
+        x: 6362
+        y: 2874
+        width: 688
+        height: 964
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed52815fc2c8cadb0800000000000000
+      internalID: -4779290979828488738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCHeadIdle_20
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 1790
+        width: 688
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b17845bea1ac51ee0800000000000000
+      internalID: -1290903501205633253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCHeadIdle_21
+      rect:
+        serializedVersion: 2
+        x: 2522
+        y: 1790
+        width: 688
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e4bc9ff12ea56890800000000000000
+      internalID: -7465369346251115287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCHeadIdle_22
+      rect:
+        serializedVersion: 2
+        x: 4442
+        y: 1790
+        width: 688
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 304801ab38fa30330800000000000000
+      internalID: 3675974701161677827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCHeadIdle_23
+      rect:
+        serializedVersion: 2
+        x: 6362
+        y: 1790
+        width: 688
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 649a6370176b98d00800000000000000
+      internalID: 975511390871005510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCHeadIdle_24
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 714
+        width: 688
+        height: 964
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 267ecaeb9f79bcea0800000000000000
+      internalID: -5851416191936174238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCHeadIdle_25
+      rect:
+        serializedVersion: 2
+        x: 2522
+        y: 714
+        width: 688
+        height: 964
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 260fbfed447c72060800000000000000
+      internalID: 6928725650345554018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCHeadIdle_26
+      rect:
+        serializedVersion: 2
+        x: 4442
+        y: 714
+        width: 688
+        height: 964
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52edd7e1a1771dfb0800000000000000
+      internalID: -4624784388268368347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCHeadIdle_27
+      rect:
+        serializedVersion: 2
+        x: 6362
+        y: 714
+        width: 688
+        height: 964
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e4465075b24bb070800000000000000
+      internalID: 8123159699934037219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
