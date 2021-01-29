@@ -6,23 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/City Level v1/Level1.unity
-    guid: 6eeeedf90c00a5e4796f90358ccb21b4
+    path: Assets/Scenes/MainMenu.unity
+    guid: fe0a8109a689e4f40a8b8463505ee985
   - enabled: 1
-    path: Assets/Scenes/City Level v1/Level2.unity
-    guid: c853b5581a788114a9e83bdae256d194
-  - enabled: 1
-    path: Assets/Scenes/City Level v1/Level3.unity
-    guid: f95a12ab30c90fe49a2d399f100414bc
-  - enabled: 1
-    path: Assets/Scenes/City Level v1/Level4.unity
-    guid: a9804d6d3f906ed4d9e205932444a0b2
-  - enabled: 1
-    path: Assets/Scenes/City Level v1/Level5.unity
-    guid: 06e501763edc49a46bc96604aa1bd170
-  - enabled: 1
-    path: Assets/Scenes/Space Level/Level6.unity
-    guid: e7f4bf13aacd6094a8b1444f8cd2f847
+    path: Assets/Scenes/LevelLoader.unity
+    guid: 77d91d653930cd64b950b63eef07b90f
   - enabled: 1
     path: Assets/Scenes/City Level/Regular Level.unity
     guid: 1d5bfddade4150a478e4d8359ddebd82
@@ -59,4 +47,40 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Factory Level/Rotate Level.unity
     guid: 79cd9edbd26a93146a479e49d13ba1db
+  - enabled: 1
+    path: Assets/Scenes/Space Level/Level6.unity
+    guid: e7f4bf13aacd6094a8b1444f8cd2f847
+  - enabled: 1
+    path: Assets/Scenes/Space Level/Level7.unity
+    guid: 0839390560660ef4ebb82f11faec61fa
+  - enabled: 1
+    path: Assets/Scenes/Space Level/Level8.unity
+    guid: e2c3a2c641a99bb4e9bdcbbeaf3bec09
+  - enabled: 1
+    path: Assets/Scenes/Space Level/Level9.unity
+    guid: 0152cf50afae6cd4b8e154618ab593b0
+  - enabled: 1
+    path: Assets/Scenes/Space Level/Level10.unity
+    guid: f7abb56dc1b2f244dbfc1a52bc584f12
+  - enabled: 1
+    path: Assets/Scenes/Space Level/Level11.unity
+    guid: 55f237cbd82988c4e8024c9990c428f4
+  - enabled: 1
+    path: Assets/Scenes/Space Level/Level14.unity
+    guid: 32334a800a3a89148a2ac2d43683988e
+  - enabled: 1
+    path: Assets/Scenes/Space Level/Level15.unity
+    guid: b110739609ce2564dbb986cbfc596506
+  - enabled: 1
+    path: Assets/Scenes/Space Level/Level16.unity
+    guid: bb081ad61aa04724ab44b225433df820
+  - enabled: 1
+    path: Assets/Scenes/Space Level/Level17.unity
+    guid: a702bcad9fb86304c9ecbda2887be966
+  - enabled: 1
+    path: Assets/Scenes/Space Level/Level18.unity
+    guid: 985f0f4c77eefb84e97cfe30ad345415
+  - enabled: 1
+    path: Assets/Scenes/Space Level/Level19.unity
+    guid: 535cd7f18faef7b4c9a137ad084b6a7c
   m_configObjects: {}

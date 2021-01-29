@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Dialog : MonoBehaviour
 {
@@ -28,7 +29,6 @@ public class Dialog : MonoBehaviour
         }
         if (index == sentences.Length-1)
             cbtext.text = "PLAY";
-
     }
 
     IEnumerator Type()
@@ -52,7 +52,7 @@ public class Dialog : MonoBehaviour
         }
         else
         {
-            GameManager.gm.LevelSelect("Level6");
+            GameManager.gm.LevelSelect(SceneManager.GetActiveScene().buildIndex+1);
         }
     }
 }
