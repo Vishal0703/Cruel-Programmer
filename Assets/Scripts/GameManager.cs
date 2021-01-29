@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     public Transform center;
 
     public Light light;
+    bool isPaused = false;
 
     AudioSource audio;
     private void Awake()
@@ -47,6 +48,15 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            if (!isPaused)
+                DilateTime(0f);
+            else
+                DilateTime(GameManager.gm.slowMotionTimeScale);
+
+            isPaused = !isPaused;
+        }
         if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -86,7 +96,6 @@ public class GameManager : MonoBehaviour
         //        laserAudioSource.pitch = timescale;
         //    StartCoroutine(ResetTime());
         //}
-
     }
     public void LevelSelect(int index, float timetoWait = 1f)
     {
