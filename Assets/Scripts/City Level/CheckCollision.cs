@@ -10,6 +10,7 @@ public class CheckCollision : MonoBehaviour
     [SerializeField] float jumpHeight = 100f;
     bool isDead = false;
     bool isVictory = false;
+    public bool isPause = true;
 
     private void Start()
     {
@@ -72,10 +73,12 @@ public class CheckCollision : MonoBehaviour
     void PauseGame()
     {
         Time.timeScale = 0;
+        isPause = true;
     }
 
     void ResumeGame()
     {
         Time.timeScale = 1;
+        isPause = false;
     }
 }

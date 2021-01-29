@@ -15,6 +15,7 @@ public class Wrapping : MonoBehaviour
     {
         renderers = GetComponentsInChildren<Renderer>();
         rb = GetComponent<Rigidbody2D>();
+        GetComponent<Animator>().SetBool("isJumping", true);
     }
 
     bool CheckRenderers()

@@ -128,6 +128,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1177866282, guid: 6ba7156e6d331204091cb894fdf750d3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1434988942, guid: 6ba7156e6d331204091cb894fdf750d3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4134029607665632385, guid: 6ba7156e6d331204091cb894fdf750d3,
         type: 3}
       propertyPath: m_Tiles.Array.size
@@ -287,6 +295,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Die
+      objectReference: {fileID: 0}
+    - target: {fileID: 4134029607665632388, guid: 6ba7156e6d331204091cb894fdf750d3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4134029607886634688, guid: 6ba7156e6d331204091cb894fdf750d3,
         type: 3}

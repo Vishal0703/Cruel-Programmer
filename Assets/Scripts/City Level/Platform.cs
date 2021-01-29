@@ -4,30 +4,29 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour
 {
-
-    public Transform pos1, pos2;
-
     public float speed;
-    public Transform startPos;
+    Transform startPos;
+    [SerializeField] float pos1 = 14;
+    [SerializeField] float pos2 = -10;
 
-    Vector3 nextPos;
+    Vector2 nextPos;
 
     // Start is called before the first frame update
     void Start()
     {
-        nextPos = startPos.position;
+        nextPos.y = pos1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.position == pos1.position)
+        if (transform.position.y == pos1)
         {
-            nextPos = pos2.position;
+            nextPos.y = pos2;
         }
-        if (transform.position == pos2.position)
+        if (transform.position.y == pos2)
         {
-            nextPos = pos1.position;
+            nextPos.y = pos1;
         }
 
         transform.position = Vector3.MoveTowards(transform.position, nextPos, speed*Time.deltaTime);
