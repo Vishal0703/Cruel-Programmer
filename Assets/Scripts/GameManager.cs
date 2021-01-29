@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager gm;
 
-    public AudioClip levelRestartSound;
+    //public AudioClip levelRestartSound;
     public bool isJumpAvailable = true;
     public bool isLeftAvailable = true;
     public bool isRightAvailable = true;
@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     public Light light;
     bool isPaused = false;
 
-    AudioSource audio;
+    //AudioSource audio;
     private void Awake()
     {
         if(gm==null)
@@ -41,8 +41,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audio = GetComponent<AudioSource>();
-        audio.PlayOneShot(levelRestartSound);
+        //audio = GetComponent<AudioSource>();
+        //audio.PlayOneShot(levelRestartSound);
     }
 
     // Update is called once per frame
