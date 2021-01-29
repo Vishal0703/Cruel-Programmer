@@ -263,7 +263,9 @@ public class PlayerMovement : MonoBehaviour
 			anim.SetBool("isDead", true);
 			anim.SetTrigger("deadTrigger");
 			FMODUnity.RuntimeManager.PlayOneShot("event:/Hurt");
-			GameManager.gm.LevelSelect(SceneManager.GetActiveScene().buildIndex, 1.5f);
+			rgbd.velocity = new Vector2(0f, 0f);
+			transform.GetComponent<BoxCollider2D>().enabled = false;
+			GameManager.gm.LevelSelect(SceneManager.GetActiveScene().buildIndex, 1.2f);
 		}
 		
 			
