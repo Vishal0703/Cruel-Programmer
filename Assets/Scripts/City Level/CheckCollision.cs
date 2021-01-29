@@ -27,27 +27,23 @@ public class CheckCollision : MonoBehaviour
             string sceneName = SceneManager.GetActiveScene().name;
             SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
         }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            if (!isPause)
-                PauseGame();
-            else
-                ResumeGame();
-        }
 
-        if (Input.anyKeyDown)
+        else if (Input.GetKeyDown(KeyCode.P))
         {
+            if (isPause)
+                ResumeGame();
+            else
+                PauseGame();
+        }
+        else if (Input.anyKeyDown)
+        {
+            if (isPause)
+            {
+                ResumeGame();
+            }
             if (isVictory)
             {
                 SceneManager.LoadScene(nextSceneToLoad);
-            }
-            else if (!isDead)
-            {
-                ResumeGame();
-            }
-            else
-            {
-                SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
             }
         }
     }
@@ -56,10 +52,10 @@ public class CheckCollision : MonoBehaviour
     {
         if (collision.gameObject.tag == "Die")
         {
-            PauseGame();
-            isDead = true;
             GetComponent<Animator>().SetBool("isDead", true);
             FMODUnity.RuntimeManager.PlayOneShot("event:/Hurt");
+            StartCoroutine("Die");
+            //isDead = true;
         }
 
         if (collision.gameObject.tag == "Win")
@@ -89,5 +85,11 @@ public class CheckCollision : MonoBehaviour
         Time.timeScale = 1;
         isPause = false;
         Debug.Log("Resume");
+    }
+
+    IEnumerator Die()
+    {
+        yield return new WaitForSecondsRealtime(1.5f);
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
     }
 }
