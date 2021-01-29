@@ -88,4 +88,33 @@ public class GameManager : MonoBehaviour
         //}
 
     }
+    public void LevelSelect(int index, float timetoWait = 1f)
+    {
+        StartCoroutine(WaitforLoadingNextScene(index, timetoWait));
+    }
+
+    public void LevelSelect(string name, float timetoWait = 1f)
+    {
+        StartCoroutine(WaitforLoadingNextScene(name, timetoWait));
+    }
+
+
+    IEnumerator WaitforLoadingNextScene(int sceneIndex, float timetoWait = 1f)
+    {
+        yield return new WaitForSeconds(timetoWait);
+        Debug.Log($"Scene number is {sceneIndex}");
+        SceneManager.LoadScene(sceneIndex);
+    }
+
+    IEnumerator WaitforLoadingNextScene(string sceneName, float timetoWait = 1f)
+    {
+        yield return new WaitForSeconds(timetoWait);
+        Debug.Log($"Scene name is {sceneName}");
+        SceneManager.LoadScene(sceneName);
+    }
+
+    //public int GetPlayableLevels()
+    //{
+    //    return numPlayableLevels;
+    //}
 }

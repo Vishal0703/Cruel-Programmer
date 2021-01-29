@@ -40,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
 	//Rigidbody2D rigidbody;
 	AudioSource audio;
 	Rigidbody2D rgbd;
+	Animator anim;
 	Vector3 orig_pos;
 	// store the layer the player is on (setup in Awake)
 	int _playerLayer;
@@ -57,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
             Debug.LogError("Rigidbody2D component missing from this gameobject");
 
         audio = GetComponent<AudioSource>();
+		anim = GetComponent<Animator>();
         // determine the player's specified layer
         _playerLayer = this.gameObject.layer;
 
@@ -72,6 +74,9 @@ public class PlayerMovement : MonoBehaviour
     // this is where most of the player controller magic happens each game event loop
     void Update()
 	{
+		//anim.SetBool("isJumping", false);
+		//anim.SetBool("isVictory", false);
+		//anim.SetBool("isDead", false);
 		// exit update if player cannot move or game is paused
 		if (!playerCanMove || (Time.timeScale == 0f))
 			return;
@@ -112,6 +117,16 @@ public class PlayerMovement : MonoBehaviour
 			_vx = 0f;
 		if (!GameManager.gm.isRightAvailable && _vx > 0f)
 			_vx = 0f;
+
+
+		if (_vx != 0)
+		{
+			anim.SetBool("isRunning", true);
+			FMODUnity.RuntimeManager.PlayOneShot("event:/Footstep");
+		}
+		else
+			anim.SetBool("isRunning", false);
+
 
 		Vector2 dir = new Vector2(0f,1f);
 		if (!GameManager.gm.isCircularLevel)
@@ -218,6 +233,8 @@ public class PlayerMovement : MonoBehaviour
 
 	void DoJump(Vector2 dir)
 	{
+		anim.SetBool("isJumping", true);
+		anim.SetTrigger("jumpTrigger");
 		if (GameManager.gm.isGravityReversed)
 			dir = -dir;
 		// reset current vertical motion to 0 prior to jump
@@ -243,8 +260,10 @@ public class PlayerMovement : MonoBehaviour
 
 		if (collision.gameObject.CompareTag("obstacle"))
 		{
+			anim.SetBool("isDead", true);
+			anim.SetTrigger("deadTrigger");
 			FMODUnity.RuntimeManager.PlayOneShot("event:/Hurt");
-			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+			GameManager.gm.LevelSelect(SceneManager.GetActiveScene().buildIndex, 1.5f);
 		}
 		
 			
@@ -255,10 +274,19 @@ public class PlayerMovement : MonoBehaviour
 		if (collision.gameObject.CompareTag("goal"))
 		{
 			Debug.Log("Victory");
-			
-			FMODUnity.RuntimeManager.PlayOneShot("event:/Victory");
+			anim.SetTrigger("victoryTrigger");
+			anim.SetBool("isVictory", true);
+			FMODUnity.RuntimeManager.PlayOneShot("event:/Goal");
+			ResetPlayer();
 			if (SceneManager.GetActiveScene().buildIndex + 1 < SceneManager.sceneCountInBuildSettings)
-				SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+				GameManager.gm.LevelSelect(SceneManager.GetActiveScene().buildIndex + 1, 1.5f);
 		}
+	}
+
+	void ResetPlayer()
+    {
+		transform.position = new Vector3(0f, 0f, 0f);
+		transform.eulerAngles = new Vector3(0f, 0f, 0f);
+		rgbd.velocity = new Vector2(0f, 0f);
 	}
 }
