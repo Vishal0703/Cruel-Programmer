@@ -16,6 +16,7 @@ public class Dialog : MonoBehaviour
     {
         textDisplay.text = "";
         StartCoroutine(Type());
+        continueButton.SetActive(false);
     }
 
     // Update is called once per frame
@@ -51,7 +52,7 @@ public class Dialog : MonoBehaviour
         }
         else
         {
-            GameManager.gm.LevelSelect("LevelLoader");
+            GameManager.gm.LevelSelect("Level6");
         }
     }
 }
