@@ -9,6 +9,10 @@ TagManager:
   - ground
   - Light
   - spring
+  - Win
+  - Platform
+  - Die
+  - Bounce
   layers:
   - Default
   - TransparentFX

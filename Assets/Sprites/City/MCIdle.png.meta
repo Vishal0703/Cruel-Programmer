@@ -1,0 +1,944 @@
+fileFormatVersion: 2
+guid: d34760578391dc64584ba605d8ea5fb9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5266899187220135065
+    second: MCIdle_0
+  - first:
+      213: -7534805625062979028
+    second: MCIdle_1
+  - first:
+      213: 4086305928852957474
+    second: MCIdle_2
+  - first:
+      213: 3127672461271977265
+    second: MCIdle_3
+  - first:
+      213: -6469804546005740702
+    second: MCIdle_4
+  - first:
+      213: 3918622021252781832
+    second: MCIdle_5
+  - first:
+      213: 5736693547964949926
+    second: MCIdle_6
+  - first:
+      213: 7152881539922008378
+    second: MCIdle_7
+  - first:
+      213: -6287381428975572261
+    second: MCIdle_8
+  - first:
+      213: -8006983937488214201
+    second: MCIdle_9
+  - first:
+      213: 2291149018390964177
+    second: MCIdle_10
+  - first:
+      213: 8280523166100833992
+    second: MCIdle_11
+  - first:
+      213: 1562166244169171120
+    second: MCIdle_12
+  - first:
+      213: 3097789666302244465
+    second: MCIdle_13
+  - first:
+      213: 5355662176160679662
+    second: MCIdle_14
+  - first:
+      213: 5805178428272523638
+    second: MCIdle_15
+  - first:
+      213: 8211524053926534287
+    second: MCIdle_16
+  - first:
+      213: -5328902339941890453
+    second: MCIdle_17
+  - first:
+      213: -8745849955382458733
+    second: MCIdle_18
+  - first:
+      213: -3421153309363449891
+    second: MCIdle_19
+  - first:
+      213: 7092874834498697633
+    second: MCIdle_20
+  - first:
+      213: -2529598704207184954
+    second: MCIdle_21
+  - first:
+      213: 984903697206659920
+    second: MCIdle_22
+  - first:
+      213: 5998947723532490014
+    second: MCIdle_23
+  - first:
+      213: -2739622344563041291
+    second: MCIdle_24
+  - first:
+      213: -8345898515779983293
+    second: MCIdle_25
+  - first:
+      213: -5888333738278853390
+    second: MCIdle_26
+  - first:
+      213: 3280333919157689094
+    second: MCIdle_27
+  - first:
+      213: -5672002899732110060
+    second: MCIdle_0
+  - first:
+      213: 4768417648454745267
+    second: MCIdle_1
+  - first:
+      213: -4669560623151395884
+    second: MCIdle_2
+  - first:
+      213: -6531983381031901221
+    second: MCIdle_3
+  - first:
+      213: 7929916445601482832
+    second: MCIdle_4
+  - first:
+      213: -2874256000476103829
+    second: MCIdle_5
+  - first:
+      213: 9060641314110136741
+    second: MCIdle_6
+  - first:
+      213: 1053754432087482815
+    second: MCIdle_7
+  - first:
+      213: 4731133922673534280
+    second: MCIdle_8
+  - first:
+      213: -1020208370511357581
+    second: MCIdle_9
+  - first:
+      213: -4382632559249746286
+    second: MCIdle_10
+  - first:
+      213: 1888474262705571723
+    second: MCIdle_11
+  - first:
+      213: -2871314413996468084
+    second: MCIdle_12
+  - first:
+      213: -5779748085146444604
+    second: MCIdle_13
+  - first:
+      213: 7870785872273493930
+    second: MCIdle_14
+  - first:
+      213: 1103276251108086764
+    second: MCIdle_15
+  - first:
+      213: -7867862888966171744
+    second: MCIdle_16
+  - first:
+      213: 7232303096783304642
+    second: MCIdle_17
+  - first:
+      213: 8650379135693018781
+    second: MCIdle_18
+  - first:
+      213: -3477850619472541048
+    second: MCIdle_19
+  - first:
+      213: 1409358987596770904
+    second: MCIdle_20
+  - first:
+      213: 3084427437483084542
+    second: MCIdle_21
+  - first:
+      213: 5722394399672893485
+    second: MCIdle_22
+  - first:
+      213: -6891184455420053338
+    second: MCIdle_23
+  - first:
+      213: 5307176894890729565
+    second: MCIdle_24
+  - first:
+      213: 3869138634011471744
+    second: MCIdle_25
+  - first:
+      213: 7027911726210304514
+    second: MCIdle_26
+  - first:
+      213: 3620113091020126110
+    second: MCIdle_27
+  - first:
+      213: 954136625799941163
+    second: MCIdle_28
+  - first:
+      213: 6747327841294583112
+    second: MCIdle_29
+  - first:
+      213: -8302424080802505475
+    second: MCIdle_30
+  - first:
+      213: 1334550133888834978
+    second: MCIdle_31
+  - first:
+      213: -4435967271858354286
+    second: MCIdle_32
+  - first:
+      213: 7666723720782408284
+    second: MCIdle_33
+  - first:
+      213: -1012262256027250960
+    second: MCIdle_34
+  - first:
+      213: 6551959195303650611
+    second: MCIdle_35
+  - first:
+      213: -1086365523597943433
+    second: MCIdle_36
+  - first:
+      213: -2780851765884942214
+    second: MCIdle_37
+  - first:
+      213: 2071773086519526773
+    second: MCIdle_38
+  - first:
+      213: -3262402214525731073
+    second: MCIdle_39
+  - first:
+      213: 959701531799718209
+    second: MCIdle_40
+  - first:
+      213: 5665494452861546962
+    second: MCIdle_41
+  - first:
+      213: 3346389907079831061
+    second: MCIdle_42
+  - first:
+      213: -389110047024971336
+    second: MCIdle_43
+  - first:
+      213: -2090584969691490674
+    second: MCIdle_44
+  - first:
+      213: 7391823009806427624
+    second: MCIdle_45
+  - first:
+      213: -9201657479851424285
+    second: MCIdle_46
+  - first:
+      213: -8879448716469988098
+    second: MCIdle_47
+  - first:
+      213: 4686885782274834883
+    second: MCIdle_48
+  - first:
+      213: 6391699395951047194
+    second: MCIdle_49
+  - first:
+      213: 6346530437061732396
+    second: MCIdle_50
+  - first:
+      213: -8405963230494824550
+    second: MCIdle_51
+  - first:
+      213: -8830068215855647026
+    second: MCIdle_52
+  - first:
+      213: 4785903104532766468
+    second: MCIdle_53
+  - first:
+      213: 6002383913953094758
+    second: MCIdle_54
+  - first:
+      213: -4995371260822083778
+    second: MCIdle_55
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 900
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MCIdle_0
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 6547
+        width: 449
+        height: 1009
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4156b7c0a6ff841b0800000000000000
+      internalID: -5672002899732110060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCIdle_1
+      rect:
+        serializedVersion: 2
+        x: 2657
+        y: 6547
+        width: 449
+        height: 1009
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bc39dc4692dc2240800000000000000
+      internalID: 4768417648454745267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCIdle_2
+      rect:
+        serializedVersion: 2
+        x: 4582
+        y: 6547
+        width: 449
+        height: 1009
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dbc8e78a53623fb0800000000000000
+      internalID: -4669560623151395884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCIdle_3
+      rect:
+        serializedVersion: 2
+        x: 6507
+        y: 6547
+        width: 449
+        height: 1009
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd7a6de09bbb955a0800000000000000
+      internalID: -6531983381031901221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCIdle_4
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 5462
+        width: 449
+        height: 1009
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 058ca962ef8bc0e60800000000000000
+      internalID: 7929916445601482832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCIdle_5
+      rect:
+        serializedVersion: 2
+        x: 2657
+        y: 5462
+        width: 449
+        height: 1009
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6b361265679c18d0800000000000000
+      internalID: -2874256000476103829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCIdle_6
+      rect:
+        serializedVersion: 2
+        x: 4582
+        y: 5462
+        width: 449
+        height: 1009
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a163c4154dddbd70800000000000000
+      internalID: 9060641314110136741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCIdle_7
+      rect:
+        serializedVersion: 2
+        x: 6507
+        y: 5462
+        width: 449
+        height: 1009
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb1611da210bf9e00800000000000000
+      internalID: 1053754432087482815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCIdle_8
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 4377
+        width: 449
+        height: 1009
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 845a1cd6c3d58a140800000000000000
+      internalID: 4731133922673534280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCIdle_9
+      rect:
+        serializedVersion: 2
+        x: 2657
+        y: 4377
+        width: 449
+        height: 1009
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3795ace64ed77d1f0800000000000000
+      internalID: -1020208370511357581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCIdle_10
+      rect:
+        serializedVersion: 2
+        x: 4582
+        y: 4377
+        width: 449
+        height: 1009
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2969bd458e2cd23c0800000000000000
+      internalID: -4382632559249746286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCIdle_11
+      rect:
+        serializedVersion: 2
+        x: 6507
+        y: 4377
+        width: 449
+        height: 1009
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b87880c1655353a10800000000000000
+      internalID: 1888474262705571723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCIdle_12
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 3292
+        width: 449
+        height: 1009
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c88184bd0ca0728d0800000000000000
+      internalID: -2871314413996468084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCIdle_13
+      rect:
+        serializedVersion: 2
+        x: 2657
+        y: 3292
+        width: 449
+        height: 1009
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cc1a9d2db53acfa0800000000000000
+      internalID: -5779748085146444604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCIdle_14
+      rect:
+        serializedVersion: 2
+        x: 4582
+        y: 3292
+        width: 449
+        height: 1009
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaf4604bc06aa3d60800000000000000
+      internalID: 7870785872273493930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCIdle_15
+      rect:
+        serializedVersion: 2
+        x: 6507
+        y: 3292
+        width: 449
+        height: 1009
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce31c6ca7ef9f4f00800000000000000
+      internalID: 1103276251108086764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCIdle_16
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 2207
+        width: 449
+        height: 1009
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a351b1636cbfc290800000000000000
+      internalID: -7867862888966171744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCIdle_17
+      rect:
+        serializedVersion: 2
+        x: 2657
+        y: 2207
+        width: 449
+        height: 1009
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c7f9bf195d4e5460800000000000000
+      internalID: 7232303096783304642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCIdle_18
+      rect:
+        serializedVersion: 2
+        x: 4582
+        y: 2207
+        width: 449
+        height: 1009
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d96de630ef15c0870800000000000000
+      internalID: 8650379135693018781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCIdle_19
+      rect:
+        serializedVersion: 2
+        x: 6507
+        y: 2207
+        width: 449
+        height: 1009
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88a877cb9413cbfc0800000000000000
+      internalID: -3477850619472541048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCIdle_20
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 1122
+        width: 449
+        height: 1009
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85ea5b8388c0f8310800000000000000
+      internalID: 1409358987596770904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCIdle_21
+      rect:
+        serializedVersion: 2
+        x: 2657
+        y: 1122
+        width: 449
+        height: 1009
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efac5a299661eca20800000000000000
+      internalID: 3084427437483084542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCIdle_22
+      rect:
+        serializedVersion: 2
+        x: 4582
+        y: 1122
+        width: 449
+        height: 1009
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d20003153670a6f40800000000000000
+      internalID: 5722394399672893485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCIdle_23
+      rect:
+        serializedVersion: 2
+        x: 6507
+        y: 1122
+        width: 449
+        height: 1009
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a87ef4bf389d50a0800000000000000
+      internalID: -6891184455420053338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCIdle_24
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 37
+        width: 449
+        height: 1009
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d506f1c6441e6a940800000000000000
+      internalID: 5307176894890729565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCIdle_25
+      rect:
+        serializedVersion: 2
+        x: 2657
+        y: 37
+        width: 449
+        height: 1009
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08f6efa8611f1b530800000000000000
+      internalID: 3869138634011471744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCIdle_26
+      rect:
+        serializedVersion: 2
+        x: 4582
+        y: 37
+        width: 449
+        height: 1009
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20a4191ca78288160800000000000000
+      internalID: 7027911726210304514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCIdle_27
+      rect:
+        serializedVersion: 2
+        x: 6507
+        y: 37
+        width: 449
+        height: 1009
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e97fef41da93d3230800000000000000
+      internalID: 3620113091020126110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
