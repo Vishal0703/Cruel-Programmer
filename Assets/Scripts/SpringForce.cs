@@ -25,7 +25,8 @@ public class SpringForce : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            anim.SetTrigger("push");
+            if(anim !=null)
+                anim.SetTrigger("push");
             Vector2 dir = target.position - transform.position;
             Rigidbody2D rgbd = collision.gameObject.GetComponent<Rigidbody2D>();
             rgbd.AddForce(dir.normalized * springImpulse, ForceMode2D.Impulse);

@@ -139,13 +139,16 @@ public class PlayerMovement : MonoBehaviour
 			{
 				dir = GameManager.gm.center.position - transform.position;
 				dir = dir.normalized;
-				float sin_theta = dir.y / dir.magnitude;
-				float cos_theta = dir.x / dir.magnitude;
-				Vector2 vel = new Vector2();
-				vel.x = rgbd.velocity.x + _vx * moveSpeed * sin_theta;
-				vel.y = rgbd.velocity.y - _vx * moveSpeed * cos_theta;
-				rgbd.velocity = vel;
-				RotatePlayer(dir);
+				if (dir.magnitude != 0)
+				{
+					float sin_theta = dir.y / dir.magnitude;
+					float cos_theta = dir.x / dir.magnitude;
+					Vector2 vel = new Vector2();
+					vel.x = rgbd.velocity.x + _vx * moveSpeed * sin_theta;
+					vel.y = rgbd.velocity.y - _vx * moveSpeed * cos_theta;
+					rgbd.velocity = vel;
+					RotatePlayer(dir);
+				}
 			}
 		}
 

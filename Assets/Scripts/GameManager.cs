@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         audio = GetComponent<AudioSource>();
+        DilateTime(1f);
     }
 
     // Update is called once per frame
