@@ -17,7 +17,7 @@ public class UpdateGravity : MonoBehaviour
         {
             Vector2 dir = transform.position - GameManager.gm.center.position;
             dir = dir.normalized * 9.81f;
-            Debug.Log($"dir is {dir}");
+            //Debug.Log($"dir is {dir}");
             Physics2D.gravity = dir;
         }
         if(GameManager.gm.isGravityReversed)

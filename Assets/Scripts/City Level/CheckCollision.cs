@@ -23,6 +23,10 @@ public class CheckCollision : MonoBehaviour
 
     private void Update()
     {
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            SceneManager.LoadScene("LevelLoader");
+        }
         if (Input.GetKeyDown(KeyCode.R))
         {
             string sceneName = SceneManager.GetActiveScene().name;

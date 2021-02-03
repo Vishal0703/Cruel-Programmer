@@ -44,10 +44,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8d8c62b8dcc65e44b3ced4949f4e1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelRestartSound: {fileID: 8300000, guid: 906bb24c9ffe3674a8b34f2265b722ab, type: 3}
   isJumpAvailable: 1
-  isleftAvailable: 1
+  isLeftAvailable: 1
+  isRightAvailable: 1
   isLightAvailable: 1
+  isCircularLevel: 1
+  isAirJumpAllowed: 0
+  isGravityReversed: 0
+  isMotionReversed: 0
+  isSlowMotion: 0
+  isControlGravity: 0
+  slowMotionTimeScale: 1
+  isJumpCountRestricted: 0
+  restrictedJumpCount: 3
+  topLevel: 1
+  center: {fileID: 0}
   light: {fileID: 0}
 --- !u!82 &110575088
 AudioSource:
@@ -59,9 +70,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ec411fad71bc85e46a7ef880d74da2ae, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.504
+  m_Volume: 0.41
   m_Pitch: 1
   Loop: 0
   Mute: 0

@@ -40,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
 	//Rigidbody2D rigidbody;
 	AudioSource audio;
 	Rigidbody2D rgbd;
+	Animator anim;
 	Vector3 orig_pos;
 	// store the layer the player is on (setup in Awake)
 	int _playerLayer;
@@ -57,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
             Debug.LogError("Rigidbody2D component missing from this gameobject");
 
         audio = GetComponent<AudioSource>();
+		anim = GetComponent<Animator>();
         // determine the player's specified layer
         _playerLayer = this.gameObject.layer;
 
@@ -64,9 +66,17 @@ public class PlayerMovement : MonoBehaviour
 		_platformLayer = LayerMask.NameToLayer("Platform");
 	}
 
-	// this is where most of the player controller magic happens each game event loop
-	void Update()
+    private void Start()
+    {
+		if (GameManager.gm.isGravityReversed)
+			facingRight = !facingRight;
+    }
+    // this is where most of the player controller magic happens each game event loop
+    void Update()
 	{
+		//anim.SetBool("isJumping", false);
+		//anim.SetBool("isVictory", false);
+		//anim.SetBool("isDead", false);
 		// exit update if player cannot move or game is paused
 		if (!playerCanMove || (Time.timeScale == 0f))
 			return;
@@ -108,6 +118,16 @@ public class PlayerMovement : MonoBehaviour
 		if (!GameManager.gm.isRightAvailable && _vx > 0f)
 			_vx = 0f;
 
+
+		if (_vx != 0)
+		{
+			anim.SetBool("isRunning", true);
+			FMODUnity.RuntimeManager.PlayOneShot("event:/Footstep");
+		}
+		else
+			anim.SetBool("isRunning", false);
+
+
 		Vector2 dir = new Vector2(0f,1f);
 		if (!GameManager.gm.isCircularLevel)
 			rgbd.velocity = new Vector2(_vx * moveSpeed, _vy);
@@ -119,13 +139,16 @@ public class PlayerMovement : MonoBehaviour
 			{
 				dir = GameManager.gm.center.position - transform.position;
 				dir = dir.normalized;
-				float sin_theta = dir.y / dir.magnitude;
-				float cos_theta = dir.x / dir.magnitude;
-				Vector2 vel = new Vector2();
-				vel.x = rgbd.velocity.x + _vx * moveSpeed * sin_theta;
-				vel.y = rgbd.velocity.y - _vx * moveSpeed * cos_theta;
-				rgbd.velocity = vel;
-				RotatePlayer(dir);
+				if (dir.magnitude != 0)
+				{
+					float sin_theta = dir.y / dir.magnitude;
+					float cos_theta = dir.x / dir.magnitude;
+					Vector2 vel = new Vector2();
+					vel.x = rgbd.velocity.x + _vx * moveSpeed * sin_theta;
+					vel.y = rgbd.velocity.y - _vx * moveSpeed * cos_theta;
+					rgbd.velocity = vel;
+					RotatePlayer(dir);
+				}
 			}
 		}
 
@@ -158,12 +181,45 @@ public class PlayerMovement : MonoBehaviour
 		// this allows the player to jump up through things on the platform layer
 		// NOTE: requires the platforms to be on a layer named "Platform"
 		//Physics2D.IgnoreLayerCollision(_playerLayer, _platformLayer, (_vy > 0.0f));
-		if ((_vx > 0) || (_vx == 0 && transform.localScale.x > 0))
-			facingRight = true;
+		//if ((_vx > 0) || (_vx == 0 && transform.localScale.x > 0))
+		//	facingRight = true;
 
-		else if ((_vx < 0) || (_vx == 0 && transform.localScale.x < 0))
-			facingRight = false;
+		//else if ((_vx < 0) || (_vx == 0 && transform.localScale.x < 0))
+		//	facingRight = false;
 
+		//if (facingRight)
+		//{
+		//	var thescale = transform.localScale;
+		//	thescale.x *= 1;
+		//	transform.localScale = thescale;
+		//}
+		//else
+  //      {
+		//	var thescale = transform.localScale;
+		//	thescale.x *= -1;
+		//	transform.localScale = thescale;
+		//}
+
+		if(_vx > 0 && !facingRight)
+        {
+			Flip();
+        }
+		else if(_vx<0 && facingRight)
+        {
+			Flip();
+        }
+
+	}
+
+	private void Flip()
+	{
+		// Switch the way the player is labelled as facing.
+		facingRight = !facingRight;
+
+		// Multiply the player's x local scale by -1.
+		Vector3 theScale = transform.localScale;
+		theScale.x *= -1;
+		transform.localScale = theScale;
 	}
 
 	void RotatePlayer(Vector2 dir)
@@ -180,6 +236,8 @@ public class PlayerMovement : MonoBehaviour
 
 	void DoJump(Vector2 dir)
 	{
+		anim.SetBool("isJumping", true);
+		anim.SetTrigger("jumpTrigger");
 		if (GameManager.gm.isGravityReversed)
 			dir = -dir;
 		// reset current vertical motion to 0 prior to jump
@@ -200,11 +258,18 @@ public class PlayerMovement : MonoBehaviour
 		//if (rigidbody.velocity.y < 0f)
 		//	audio.PlayOneShot(thud);
 
-		if (collision.gameObject.CompareTag("ground"))
-			GetComponent<AudioSource>().PlayOneShot(thud);
+		//if (collision.gameObject.CompareTag("ground"))
+		//	GetComponent<AudioSource>().PlayOneShot(thud);
 
 		if (collision.gameObject.CompareTag("obstacle"))
-			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		{
+			anim.SetBool("isDead", true);
+			anim.SetTrigger("deadTrigger");
+			FMODUnity.RuntimeManager.PlayOneShot("event:/Hurt");
+			rgbd.velocity = new Vector2(0f, 0f);
+			transform.GetComponent<BoxCollider2D>().enabled = false;
+			GameManager.gm.LevelSelect(SceneManager.GetActiveScene().buildIndex, 1.2f);
+		}
 		
 			
     }
@@ -214,8 +279,19 @@ public class PlayerMovement : MonoBehaviour
 		if (collision.gameObject.CompareTag("goal"))
 		{
 			Debug.Log("Victory");
-			if(SceneManager.GetActiveScene().buildIndex + 1 < SceneManager.sceneCountInBuildSettings)
-				SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+			anim.SetTrigger("victoryTrigger");
+			anim.SetBool("isVictory", true);
+			FMODUnity.RuntimeManager.PlayOneShot("event:/Goal");
+			ResetPlayer();
+			if (SceneManager.GetActiveScene().buildIndex + 1 < SceneManager.sceneCountInBuildSettings)
+				GameManager.gm.LevelSelect(SceneManager.GetActiveScene().buildIndex + 1, 1.5f);
 		}
+	}
+
+	void ResetPlayer()
+    {
+		transform.position = new Vector3(0f, 0f, 0f);
+		transform.eulerAngles = new Vector3(0f, 0f, 0f);
+		rgbd.velocity = new Vector2(0f, 0f);
 	}
 }
