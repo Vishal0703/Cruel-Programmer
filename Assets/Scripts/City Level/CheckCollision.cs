@@ -23,9 +23,9 @@ public class CheckCollision : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.M))
+        if(Input.GetKeyDown(KeyCode.L))
         {
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("LevelLoader");
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
