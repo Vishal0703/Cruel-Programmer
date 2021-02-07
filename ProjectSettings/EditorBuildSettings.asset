@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scenes/MenuLevels/MainMenu.unity
     guid: fe0a8109a689e4f40a8b8463505ee985
   - enabled: 1
-    path: Assets/Scenes/LevelLoader.unity
+    path: Assets/Scenes/MenuLevels/LevelLoader.unity
     guid: 77d91d653930cd64b950b63eef07b90f
   - enabled: 1
     path: Assets/Scenes/City Level/Regular Level.unity
