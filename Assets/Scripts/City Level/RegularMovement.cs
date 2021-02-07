@@ -52,7 +52,6 @@ public class RegularMovement : MonoBehaviour
             GetComponent<Animator>().SetBool("isJumping", false);
         }
 
-
         isGrounded = Physics2D.Linecast(transform.position, groundCheckLeft.position, whatIsGround) || Physics2D.Linecast(transform.position, groundCheckRight.position, whatIsGround);
         if (isGrounded)
         {

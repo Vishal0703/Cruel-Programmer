@@ -31,10 +31,7 @@ public class MusicController : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex >= 0 && SceneManager.GetActiveScene().buildIndex <= 1) //this scene range is for both the menu and the level; the more upbeat music will start when you enter a level 
         {
             //Debug.Log("menu");
-
             instance.setParameterByName("Level", 0f);
-
-
         }
         else if (SceneManager.GetActiveScene().buildIndex >= 2 && SceneManager.GetActiveScene().buildIndex <=8) //copy and paste this for whatever your build indexes for different levels are..... I intended for both the main menu and the level loader to be set to 0, city levels to be set to 1, scifi levles set to 2, space levels set to 3
         {
