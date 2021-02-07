@@ -17,10 +17,10 @@ public class GameManager : MonoBehaviour
     public bool isAirJumpAllowed = false;
     public bool isGravityReversed = false;
     public bool isMotionReversed = false;
-    public bool isSlowMotion = false;
+    //public bool isSlowMotion = false;
     public bool isControlGravity = false;
     [Range(0.0f, 1.0f)]
-    public float slowMotionTimeScale = 1f;
+    public float timeScale = 1f;
     public bool isJumpCountRestricted = false;
     public int restrictedJumpCount = 3;
     public float topLevel = 0f;
@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         audio = GetComponent<AudioSource>();
-        DilateTime(1f);
+        DilateTime(timeScale);
     }
 
     // Update is called once per frame
@@ -52,12 +52,12 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene("LevelLoader");
         }
-            if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             if (!isPaused)
                 DilateTime(0f);
             else
-                DilateTime(GameManager.gm.slowMotionTimeScale);
+                DilateTime(GameManager.gm.timeScale);
 
             isPaused = !isPaused;
         }
@@ -81,15 +81,15 @@ public class GameManager : MonoBehaviour
             GameManager.gm.isJumpAvailable = false;
 
 
-        if (GameManager.gm.isSlowMotion)
-            DilateTime(GameManager.gm.slowMotionTimeScale);
+        //if (GameManager.gm.isSlowMotion)
+        //    DilateTime(GameManager.gm.timeScale);
 
     }
 
     public void DilateTime(float timescale)
     {
         Time.timeScale = timescale;
-        audio.pitch = timescale;
+        //audio.pitch = timescale;
         //MusicController.instance.setParameterByName("Pitch", timescale);
         //if (!resettimestarted)
         //{

@@ -1,0 +1,85 @@
+name: Actions
+
+on:
+  # push: {branches: [main]}
+  release:
+    types: [prereleased,published]
+
+jobs:
+  build-windows:
+    runs-on: ubuntu-18.04
+    container: gableroux/unity3d:2019.4.8f1-windows
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      # Decrypt the license file
+      - name: Decrypt license file
+        run: openssl aes-256-cbc -d -in .github/Unity_2019_lic.ulf.enc -k ${{ secrets.UNITY_LICENCE_DECRYPT_KEY}} >> .github/Unity_2019_lic.ulf
+      
+      # Activate unity
+      - name: Activate Unity
+        run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile -manualLicenseFile .github/Unity_2019_lic.ulf || exit 0
+      
+      # Run Windows Build
+      - name: Build on Windows
+        run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -projectPath . -buildWindows64Player ./bin-win64/CruelProgrammer.exe
+
+      # Upload Artifacts
+      - name: Archive Windows Build
+        uses: actions/upload-artifact@v2
+        with:
+          name: CruelProgrammerWindows
+          path: ./bin-win64
+
+  build-webgl:
+    runs-on: ubuntu-18.04
+    container: gableroux/unity3d:2019.4.8f1-webgl
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      # Decrypt the license file
+      - name: Decrypt license file
+        run: openssl aes-256-cbc -d -in .github/Unity_2019_lic.ulf.enc -k ${{ secrets.UNITY_LICENCE_DECRYPT_KEY}} >> .github/Unity_2019_lic.ulf
+      
+      # Activate unity
+      - name: Activate Unity
+        run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile -manualLicenseFile .github/Unity_2019_lic.ulf || exit 0
+
+      # Run WebGL Build
+      - name: Build on WebGL
+        run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -projectPath . -buildTarget WebGL -executeMethod WebGLBuilder.WebGLBuild
+
+      # Upload Artifacts
+      - name: Archive WebGL Build
+        uses: actions/upload-artifact@v2
+        with:
+          name: CruelProgrammerWebGL
+          path: ./bin-webgl
+
+  build-macosx:
+    runs-on: ubuntu-18.04
+    container: gableroux/unity3d:2019.4.8f1-mac
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      # Decrypt the license file
+      - name: Decrypt license file
+        run: openssl aes-256-cbc -d -in .github/Unity_2019_lic.ulf.enc -k ${{ secrets.UNITY_LICENCE_DECRYPT_KEY}} >> .github/Unity_2019_lic.ulf
+      
+      # Activate unity
+      - name: Activate Unity
+        run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile -manualLicenseFile .github/Unity_2019_lic.ulf || exit 0
+      
+      # Run MACOSX Build
+      - name: Build on MAC_OSX
+        run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -projectPath . -buildTarget OSXUniversal -buildOSXUniversalPlayer ./bin-osx/CruelProgrammer.app      
+
+      # Upload Artifacts
+      - name: Archive MAC_OSX Build
+        uses: actions/upload-artifact@v2
+        with:
+          name: CruelProgrammerMAC
+          path: ./bin-osx

@@ -9,11 +9,12 @@ public class Platform : MonoBehaviour
     [SerializeField] float pos1 = 14;
     [SerializeField] float pos2 = -10;
 
-    Vector2 nextPos;
+    Vector3 nextPos;
 
     // Start is called before the first frame update
     void Start()
     {
+        nextPos = transform.position;
         nextPos.y = pos1;
     }
 

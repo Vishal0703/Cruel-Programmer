@@ -30,6 +30,8 @@ public class RegularMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Time.timeScale == 0f)
+            return;
         xMovement = Input.GetAxisRaw("Horizontal");
         yMovement = rb.velocity.y;
         rb.velocity = new Vector2(xMovement * speed, yMovement);
@@ -51,7 +53,6 @@ public class RegularMovement : MonoBehaviour
         {
             GetComponent<Animator>().SetBool("isJumping", false);
         }
-
 
         isGrounded = Physics2D.Linecast(transform.position, groundCheckLeft.position, whatIsGround) || Physics2D.Linecast(transform.position, groundCheckRight.position, whatIsGround);
         if (isGrounded)

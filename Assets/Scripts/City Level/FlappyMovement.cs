@@ -20,6 +20,8 @@ public class FlappyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Time.timeScale == 0f)
+            return;
         Vector3 movement = new Vector3(1f, 0f, 0f);
         transform.position += movement * Time.deltaTime * moveSpeed;
 
