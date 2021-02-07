@@ -30,6 +30,8 @@ public class RegularMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Time.timeScale == 0f)
+            return;
         xMovement = Input.GetAxisRaw("Horizontal");
         yMovement = rb.velocity.y;
         rb.velocity = new Vector2(xMovement * speed, yMovement);

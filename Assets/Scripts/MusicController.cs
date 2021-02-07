@@ -17,8 +17,6 @@ public class MusicController : MonoBehaviour
     {
         instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
         instance.start();
-        
-
     }
 
     //This part of the script changes parameters for the music. If you'd like to change the pitch of the music, use if (SceneManager.GetActiveScene().buildIndex = whatever level is the slow motion one) {instance.setParameterByName("Pitch", 0f);}
@@ -45,18 +43,17 @@ public class MusicController : MonoBehaviour
             //Debug.Log("level 1");
 
             instance.setParameterByName("Level", 2f);
-
         }
         else
         {
             instance.setParameterByName("Level", 3f);
         }
 
-
-
+        if(GameManager.gm == null)
+            instance.setParameterByName("Pitch", 1f);  
+        else
+            instance.setParameterByName("Pitch", GameManager.gm.timeScale);
     }
-        
-
-    }
+}
 
 
