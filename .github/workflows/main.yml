@@ -5,81 +5,49 @@ on:
   release:
     types: [prereleased,published]
 
+env:
+  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+
 jobs:
-  build-windows:
-    runs-on: ubuntu-18.04
-    container: gableroux/unity3d:2019.4.8f1-windows
+  buildAll:
+    name: Build for ${{ matrix.targetPlatform }} on version ${{ matrix.unityVersion }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        unityVersion:
+          - 2019.4.8f1
+        targetPlatform:
+          - StandaloneOSX # Build a macOS standalone (Intel 64-bit).
+          - StandaloneWindows64 # Build a Windows 64-bit standalone.
+          # - StandaloneLinux64 # Build a Linux 64-bit standalone.
+          # - iOS # Build an iOS player.
+          - WebGL # WebGL.
     steps:
-      - name: Checkout Repo
+      # Checkout
+      - name: Checkout repository
         uses: actions/checkout@v2
+        # with:
+        #   lfs: true
 
-      # Decrypt the license file
-      - name: Decrypt license file
-        run: openssl aes-256-cbc -d -in .github/Unity_2019_lic.ulf.enc -k ${{ secrets.UNITY_LICENCE_DECRYPT_KEY}} >> .github/Unity_2019_lic.ulf
-      
-      # Activate unity
-      - name: Activate Unity
-        run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile -manualLicenseFile .github/Unity_2019_lic.ulf || exit 0
-      
-      # Run Windows Build
-      - name: Build on Windows
-        run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -projectPath . -buildWindows64Player ./bin-win64/CruelProgrammer.exe
-
-      # Upload Artifacts
-      - name: Archive Windows Build
-        uses: actions/upload-artifact@v2
+      # Cache
+      - uses: actions/cache@v1.1.0
         with:
-          name: CruelProgrammerWindows
-          path: ./bin-win64
+          path: Library
+          key: Library-${{ matrix.targetPlatform }}
+          restore-keys: |
+            Library-
 
-  build-webgl:
-    runs-on: ubuntu-18.04
-    container: gableroux/unity3d:2019.4.8f1-webgl
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v2
-
-      # Decrypt the license file
-      - name: Decrypt license file
-        run: openssl aes-256-cbc -d -in .github/Unity_2019_lic.ulf.enc -k ${{ secrets.UNITY_LICENCE_DECRYPT_KEY}} >> .github/Unity_2019_lic.ulf
-      
-      # Activate unity
-      - name: Activate Unity
-        run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile -manualLicenseFile .github/Unity_2019_lic.ulf || exit 0
-
-      # Run WebGL Build
-      - name: Build on WebGL
-        run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -projectPath . -buildTarget WebGL -executeMethod WebGLBuilder.WebGLBuild
-
-      # Upload Artifacts
-      - name: Archive WebGL Build
-        uses: actions/upload-artifact@v2
+      # Build
+      - name: Build project
+        uses: webbertakken/unity-builder@v0.10
         with:
-          name: CruelProgrammerWebGL
-          path: ./bin-webgl
+          unityVersion: ${{ matrix.unityVersion }}
+          targetPlatform: ${{ matrix.targetPlatform }}
+          buildName: CruelProgrammer
 
-  build-macosx:
-    runs-on: ubuntu-18.04
-    container: gableroux/unity3d:2019.4.8f1-mac
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v2
-
-      # Decrypt the license file
-      - name: Decrypt license file
-        run: openssl aes-256-cbc -d -in .github/Unity_2019_lic.ulf.enc -k ${{ secrets.UNITY_LICENCE_DECRYPT_KEY}} >> .github/Unity_2019_lic.ulf
-      
-      # Activate unity
-      - name: Activate Unity
-        run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile -manualLicenseFile .github/Unity_2019_lic.ulf || exit 0
-      
-      # Run MACOSX Build
-      - name: Build on MAC_OSX
-        run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -projectPath . -buildTarget OSXUniversal -buildOSXUniversalPlayer ./bin-osx/CruelProgrammer.app      
-
-      # Upload Artifacts
-      - name: Archive MAC_OSX Build
-        uses: actions/upload-artifact@v2
+      # Output
+      - uses: actions/upload-artifact@v1
         with:
-          name: CruelProgrammerMAC
-          path: ./bin-osx
+          name: CruelProgrammerBuild
+          path: build
