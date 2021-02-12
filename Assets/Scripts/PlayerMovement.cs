@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
 	// Transform just below feet for checking if player is grounded
 	public Transform groundCheck;
 	public AudioClip thud;
+	public GameObject jumpPrefab;
 
 
 
@@ -240,6 +241,10 @@ public class PlayerMovement : MonoBehaviour
 		anim.SetTrigger("jumpTrigger");
 		if (GameManager.gm.isGravityReversed)
 			dir = -dir;
+		Debug.Log($"{groundCheck.rotation}");
+		if(jumpPrefab != null)
+			Instantiate(jumpPrefab, groundCheck.position, groundCheck.rotation);
+		FMODUnity.RuntimeManager.PlayOneShot("event:/Jump");
 		// reset current vertical motion to 0 prior to jump
 		//_vy = 0f;
 		//float tan_theta = dir.y / dir.x;

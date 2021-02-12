@@ -155,6 +155,8 @@ MonoBehaviour:
     m_Bits: 256
   groundCheck: {fileID: 4395056913966952382}
   thud: {fileID: 8300000, guid: c239c9d2b1e6dd64b97900757329fc1e, type: 3}
+  jumpPrefab: {fileID: 5022859507406038463, guid: 87fce715576586f4fa1c692dd883b5ba,
+    type: 3}
   playerCanMove: 1
 --- !u!82 &1256084239
 AudioSource:
