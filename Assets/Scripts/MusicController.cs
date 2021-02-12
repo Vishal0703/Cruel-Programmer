@@ -34,7 +34,7 @@ public class MusicController : MonoBehaviour
     {
         if (playerInput == false && Input.GetKeyDown("space"))
         {
-            ResumeAudio();
+            //ResumeAudio();
             StartCoroutine(WaitforFMODBanksLoad(5f));
             playerInput = true;
         }
