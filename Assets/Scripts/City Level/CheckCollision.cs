@@ -57,18 +57,23 @@ public class CheckCollision : MonoBehaviour
     {
         if (collision.gameObject.tag == "Die")
         {
+            //transform.GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<Animator>().SetBool("isDead", true);
             FMODUnity.RuntimeManager.PlayOneShot("event:/Hurt");
             StartCoroutine("Die");
-            //isDead = true;
+            isDead = true;
         }
 
         if (collision.gameObject.tag == "Win")
         {
-            PauseGame();
-            isVictory = true;
-            GetComponent<Animator>().SetBool("isVictory", true);
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Goal");
+            if(!isDead)
+            {
+                PauseGame();
+                isVictory = true;
+                GetComponent<Animator>().SetBool("isVictory", true);
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Goal");
+            }
+
         }
 
         if (collision.gameObject.tag == "Bounce")
