@@ -67,8 +67,8 @@ public class RegularMovement : MonoBehaviour
 
         if (hangCounter > 0 && Input.GetButtonDown("Jump"))
         {
-            //if (jumpPrefab != null)
-            //    Instantiate(jumpPrefab, (groundCheckLeft.position + groundCheckRight.position)/2, Quaternion.identity);
+            if (jumpPrefab != null)
+                Instantiate(jumpPrefab, (groundCheckLeft.position + groundCheckRight.position) / 2, Quaternion.identity);
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             FMODUnity.RuntimeManager.PlayOneShot("event:/Jump");
         }

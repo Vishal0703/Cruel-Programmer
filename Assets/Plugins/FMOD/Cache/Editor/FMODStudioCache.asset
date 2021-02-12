@@ -103,7 +103,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -6883848075021678469}
+  - {fileID: -652079668789342030}
   MinDistance: 0
   MaxDistance: 0
   Length: 5875
@@ -252,8 +252,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -1969971780791046662}
-  - {fileID: 3114679169329161165}
+  - {fileID: 2234380479272237112}
+  - {fileID: -618398738716308358}
   MinDistance: 0
   MaxDistance: 0
   Length: 518159
@@ -321,6 +321,46 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1162
   Exists: 1
+--- !u!114 &-652079668789342030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Rolling/Moving
+  m_EditorClassIdentifier: 
+  Name: Moving
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &-618398738716308358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Level
+  m_EditorClassIdentifier: 
+  Name: Level
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-247245867602228044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -376,7 +416,7 @@ MonoBehaviour:
   - {fileID: 2796331507365664382}
   StringsBanks:
   - {fileID: 5638330759055889077}
-  stringsBankWriteTime: 637481497340000000
+  stringsBankWriteTime: 637487739186481290
   cacheVersion: 6
 --- !u!114 &785773014458684765
 MonoBehaviour:
@@ -504,6 +544,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 351
+--- !u!114 &2234380479272237112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Pitch
+  m_EditorClassIdentifier: 
+  Name: Pitch
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &2796331507365664382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -519,7 +579,7 @@ MonoBehaviour:
   Path: Assets/FMOD_demo_6/FMOD demo/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637481497340000000
+  lastModified: 637487739186436615
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -707,7 +767,7 @@ MonoBehaviour:
   Path: Assets/FMOD_demo_6/FMOD demo/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637481497340000000
+  lastModified: 637487739186481290
   LoadResult: 0
   FileSizes:
   - Name: Desktop
