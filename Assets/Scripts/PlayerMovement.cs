@@ -5,8 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-	[Range(0.0f, 10.0f)] // create a slider in the editor and set limits on moveSpeed
-	public float moveSpeed = 3f;
+	//[Range(0.0f, 10.0f)] // create a slider in the editor and set limits on moveSpeed - test value : 0.54
+	//public float moveSpeed = 3f;
+
+	[Range(0.0f, 100.0f)] // create a slider in the editor and set limits on moveForce
+	public float moveForce = 15f;
 
 	public float jumpForce = 600f;
 
@@ -131,7 +134,8 @@ public class PlayerMovement : MonoBehaviour
 
 		Vector2 dir = new Vector2(0f,1f);
 		if (!GameManager.gm.isCircularLevel)
-			rgbd.velocity = new Vector2(_vx * moveSpeed, _vy);
+			rgbd.AddForce(_vx * moveForce * new Vector2(1f, 0f));
+			//rgbd.velocity = new Vector2(_vx * moveSpeed, _vy);
 		else
 		{
 			if (GameManager.gm.center == null)
@@ -142,12 +146,24 @@ public class PlayerMovement : MonoBehaviour
 				dir = dir.normalized;
 				if (dir.magnitude != 0)
 				{
-					float sin_theta = dir.y / dir.magnitude;
-					float cos_theta = dir.x / dir.magnitude;
-					Vector2 vel = new Vector2();
-					vel.x = rgbd.velocity.x + _vx * moveSpeed * sin_theta;
-					vel.y = rgbd.velocity.y - _vx * moveSpeed * cos_theta;
-					rgbd.velocity = vel;
+					//float sin_theta = dir.y / dir.magnitude;
+					//float cos_theta = dir.x / dir.magnitude;
+					//Debug.Log($"{cos_theta} , {sin_theta}");
+					//Vector2 vel = new Vector2();
+
+					//Vector2 prevVel = rgbd.velocity;
+					//float k = prevVel.x * cos_theta + prevVel.y * sin_theta + Time.deltaTime * rgbd.gravityScale;
+					//vel.x = k * cos_theta - _vx * moveSpeed * sin_theta;
+					//vel.y = -_vx * cos_theta + k * sin_theta;
+
+
+
+					////vel.x = rgbd.velocity.x + _vx * moveSpeed * sin_theta;
+					////vel.y = rgbd.velocity.y - _vx * moveSpeed * cos_theta;
+					//rgbd.velocity = vel;
+
+					Vector2 forcedir =  Vector3.Cross(dir, new Vector3(0f, 0f, 1f));
+					rgbd.AddForce(forcedir *_vx * moveForce);
 					RotatePlayer(dir);
 				}
 			}

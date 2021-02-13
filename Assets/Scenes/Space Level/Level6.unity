@@ -2807,12 +2807,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4395056913637984814, guid: 99beee384a2a446478b2735773674f09,
+    - target: {fileID: 4395056913637984809, guid: 99beee384a2a446478b2735773674f09,
         type: 3}
-      propertyPath: jumpPrefab
-      value: 
-      objectReference: {fileID: 5022859507406038463, guid: 87fce715576586f4fa1c692dd883b5ba,
-        type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99beee384a2a446478b2735773674f09, type: 3}
 --- !u!1001 &5324578167236865602
@@ -2825,12 +2824,12 @@ PrefabInstance:
     - target: {fileID: 4204924302808817991, guid: 4e6fe6614745e76498ed9c1e838e26f0,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -159.80005
+      value: -159.8003
       objectReference: {fileID: 0}
     - target: {fileID: 4204924302808817991, guid: 4e6fe6614745e76498ed9c1e838e26f0,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -17.699951
+      value: -17.700195
       objectReference: {fileID: 0}
     - target: {fileID: 5324578165713141559, guid: 4e6fe6614745e76498ed9c1e838e26f0,
         type: 3}
