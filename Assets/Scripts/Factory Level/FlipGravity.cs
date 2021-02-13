@@ -5,6 +5,9 @@ using UnityEngine;
 public class FlipGravity : MonoBehaviour
 {
     [SerializeField] float speed = 50f;
+    [SerializeField] Transform groundCheckLeft;
+    [SerializeField] Transform groundCheckRight;
+    [SerializeField] GameObject flipPrefab;
     Rigidbody2D rb;
 
     // Start is called before the first frame update
@@ -22,6 +25,8 @@ public class FlipGravity : MonoBehaviour
         transform.Translate(movement);
         if (Input.GetButtonDown("Jump"))
         {
+            if (flipPrefab != null)
+                Instantiate(flipPrefab, (groundCheckLeft.position + groundCheckRight.position) / 2, Quaternion.identity);
             rb.gravityScale *= -1;
             transform.localScale *= -1;
         }
