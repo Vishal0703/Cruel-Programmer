@@ -20,7 +20,7 @@ public class MusicController : MonoBehaviour
     IEnumerator WaitforFMODBanksLoad(float time=2f)
     {
         ResumeAudio();
-        yield return new WaitForSeconds(time);
+        yield return new WaitForSecondsRealtime(time);
         instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
         instance.start();
     }
@@ -32,10 +32,10 @@ public class MusicController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerInput == false && Input.GetKeyDown("space"))
+        if (playerInput == false && Input.anyKeyDown)
         {
             //ResumeAudio();
-            StartCoroutine(WaitforFMODBanksLoad(5f));
+            StartCoroutine(WaitforFMODBanksLoad(3f));
             playerInput = true;
         }
         if (SceneManager.GetActiveScene().buildIndex >= 0 && SceneManager.GetActiveScene().buildIndex <= 1) //this scene range is for both the menu and the level; the more upbeat music will start when you enter a level 
@@ -68,20 +68,17 @@ public class MusicController : MonoBehaviour
     }
 
 
-   
-      
-
-        public void ResumeAudio()
+    public void ResumeAudio()
+    {
+        if (!audioResumed)
         {
-            if (!audioResumed)
-            {
-                var result = FMODUnity.RuntimeManager.CoreSystem.mixerSuspend();
-                Debug.Log(result);
-                result = FMODUnity.RuntimeManager.CoreSystem.mixerResume();
-                Debug.Log(result);
-                audioResumed = true;
-            }
+            var result = FMODUnity.RuntimeManager.CoreSystem.mixerSuspend();
+            Debug.Log(result);
+            result = FMODUnity.RuntimeManager.CoreSystem.mixerResume();
+            Debug.Log(result);
+            audioResumed = true;
         }
+    }
 }
 
 

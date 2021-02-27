@@ -52,14 +52,14 @@ MonoBehaviour:
   isAirJumpAllowed: 0
   isGravityReversed: 0
   isMotionReversed: 0
-  isSlowMotion: 0
   isControlGravity: 0
-  slowMotionTimeScale: 1
+  timeScale: 1
   isJumpCountRestricted: 0
   restrictedJumpCount: 3
   topLevel: 1
   center: {fileID: 0}
   light: {fileID: 0}
+  fmodEventRunning: event:/Slow Footstep
 --- !u!82 &110575088
 AudioSource:
   m_ObjectHideFlags: 0

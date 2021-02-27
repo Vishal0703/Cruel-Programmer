@@ -126,7 +126,10 @@ public class PlayerMovement : MonoBehaviour
 		if (_vx != 0)
 		{
 			anim.SetBool("isRunning", true);
-			FMODUnity.RuntimeManager.PlayOneShot("event:/Footstep");
+			if(GameManager.gm.timeScale < 1f)
+				FMODUnity.RuntimeManager.PlayOneShot("event:/Slow Footstep");
+			else
+				FMODUnity.RuntimeManager.PlayOneShot("event:/Footstep");
 		}
 		else
 			anim.SetBool("isRunning", false);
@@ -260,7 +263,10 @@ public class PlayerMovement : MonoBehaviour
 		Debug.Log($"{groundCheck.rotation}");
 		if(jumpPrefab != null)
 			Instantiate(jumpPrefab, groundCheck.position, groundCheck.rotation);
-		FMODUnity.RuntimeManager.PlayOneShot("event:/Jump");
+		if (GameManager.gm.timeScale < 1f)
+			FMODUnity.RuntimeManager.PlayOneShot("event:/Slow Jump");
+		else
+			FMODUnity.RuntimeManager.PlayOneShot("event:/Jump");
 		// reset current vertical motion to 0 prior to jump
 		//_vy = 0f;
 		//float tan_theta = dir.y / dir.x;
@@ -286,7 +292,10 @@ public class PlayerMovement : MonoBehaviour
 		{
 			anim.SetBool("isDead", true);
 			anim.SetTrigger("deadTrigger");
-			FMODUnity.RuntimeManager.PlayOneShot("event:/Hurt");
+			if (GameManager.gm.timeScale < 1f)
+				FMODUnity.RuntimeManager.PlayOneShot("event:/Slow Hurt");
+			else
+				FMODUnity.RuntimeManager.PlayOneShot("event:/Hurt");
 			rgbd.velocity = new Vector2(0f, 0f);
 			transform.GetComponent<BoxCollider2D>().enabled = false;
 			GameManager.gm.LevelSelect(SceneManager.GetActiveScene().buildIndex, 1.2f);
@@ -302,7 +311,10 @@ public class PlayerMovement : MonoBehaviour
 			Debug.Log("Victory");
 			anim.SetTrigger("victoryTrigger");
 			anim.SetBool("isVictory", true);
-			FMODUnity.RuntimeManager.PlayOneShot("event:/Goal");
+			if (GameManager.gm.timeScale < 1f)
+				FMODUnity.RuntimeManager.PlayOneShot("event:/Slow Goal");
+			else
+				FMODUnity.RuntimeManager.PlayOneShot("event:/Goal");
 			ResetPlayer();
 			if (SceneManager.GetActiveScene().buildIndex + 1 < SceneManager.sceneCountInBuildSettings)
 				GameManager.gm.LevelSelect(SceneManager.GetActiveScene().buildIndex + 1, 1.5f);
