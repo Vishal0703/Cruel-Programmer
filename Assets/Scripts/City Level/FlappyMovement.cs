@@ -7,6 +7,9 @@ public class FlappyMovement : MonoBehaviour
     Rigidbody2D rb;
     [SerializeField] float moveSpeed = 1f;
     [SerializeField] float jumpForce = 600f;
+    [SerializeField] Transform groundCheckLeft;
+    [SerializeField] Transform groundCheckRight;
+    [SerializeField] GameObject jumpPrefab;
     bool start = false;
 
 
@@ -27,6 +30,8 @@ public class FlappyMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
+            if (jumpPrefab != null)
+                Instantiate(jumpPrefab, (groundCheckLeft.position + groundCheckRight.position) / 2, Quaternion.identity);
             FMODUnity.RuntimeManager.PlayOneShot("event:/Jump");
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }

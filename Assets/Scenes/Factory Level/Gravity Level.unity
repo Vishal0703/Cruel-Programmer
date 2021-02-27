@@ -121,6 +121,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &83448678 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 49873512, guid: 68947cfe291f02c41a4c16268b352b09,
+    type: 3}
+  m_PrefabInstance: {fileID: 2277528563998134883}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &618337360
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -201,6 +207,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204924302808817991, guid: 4e6fe6614745e76498ed9c1e838e26f0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -159.7998
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204924302808817991, guid: 4e6fe6614745e76498ed9c1e838e26f0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -17.699951
       objectReference: {fileID: 0}
     - target: {fileID: 5324578165713141559, guid: 4e6fe6614745e76498ed9c1e838e26f0,
         type: 3}
@@ -311,6 +327,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5324578166108549562, guid: 4e6fe6614745e76498ed9c1e838e26f0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -32.93994
       objectReference: {fileID: 0}
     - target: {fileID: 5324578166108549563, guid: 4e6fe6614745e76498ed9c1e838e26f0,
         type: 3}
@@ -471,6 +492,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e7adb0cfee35c14b9ce80b5407e6367, type: 3}
+--- !u!4 &1425828630 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2277528563528967806, guid: 68947cfe291f02c41a4c16268b352b09,
+    type: 3}
+  m_PrefabInstance: {fileID: 2277528563998134883}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2042149640
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -560,7 +587,7 @@ PrefabInstance:
     - target: {fileID: 1101862047018466693, guid: 68947cfe291f02c41a4c16268b352b09,
         type: 3}
       propertyPath: m_GravityScale
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1101862047018466694, guid: 68947cfe291f02c41a4c16268b352b09,
         type: 3}
@@ -649,6 +676,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 17
   jumpForce: 50
+  groundCheckLeft: {fileID: 0}
+  groundCheckRight: {fileID: 0}
+  jumpPrefab: {fileID: 0}
 --- !u!114 &2277528563998134886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -662,6 +692,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 50
+  groundCheckLeft: {fileID: 83448678}
+  groundCheckRight: {fileID: 1425828630}
+  flipPrefab: {fileID: 5022859507406038463, guid: 87fce715576586f4fa1c692dd883b5ba,
+    type: 3}
 --- !u!1001 &9156929572570665689
 PrefabInstance:
   m_ObjectHideFlags: 0

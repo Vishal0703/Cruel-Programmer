@@ -22,6 +22,7 @@ public class Portals : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Portal");
             targetPoint.GetComponent<BoxCollider2D>().enabled = false;
             collision.gameObject.transform.position = targetPoint.transform.position;
             StartCoroutine(ReEnableCollider());

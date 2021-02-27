@@ -1244,6 +1244,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 17
   jumpForce: 50
+  groundCheckLeft: {fileID: 2277528563998134885}
+  groundCheckRight: {fileID: 2277528563998134884}
+  jumpPrefab: {fileID: 5022859507406038463, guid: 87fce715576586f4fa1c692dd883b5ba,
+    type: 3}
 --- !u!1001 &1074840965
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1526,6 +1530,18 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1101862047018466681, guid: 68947cfe291f02c41a4c16268b352b09, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 68947cfe291f02c41a4c16268b352b09, type: 3}
+--- !u!4 &2277528563998134884 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2277528563528967806, guid: 68947cfe291f02c41a4c16268b352b09,
+    type: 3}
+  m_PrefabInstance: {fileID: 2277528563998134883}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2277528563998134885 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 49873512, guid: 68947cfe291f02c41a4c16268b352b09,
+    type: 3}
+  m_PrefabInstance: {fileID: 2277528563998134883}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9156929572570665689
 PrefabInstance:
   m_ObjectHideFlags: 0

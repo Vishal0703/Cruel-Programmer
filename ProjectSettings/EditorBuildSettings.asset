@@ -39,11 +39,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Factory Level/Flappy Factory Level.unity
     guid: 79785d98c5b89d74fae616be40406d16
   - enabled: 1
-    path: Assets/Scenes/Factory Level/Gravity Level.unity
-    guid: 4dd7f3b3f7fb26444be78b30a7175d5e
-  - enabled: 1
     path: Assets/Scenes/Factory Level/Wrapping Level.unity
     guid: 43dedc0bd2ab889489dae09b7d62297c
+  - enabled: 1
+    path: Assets/Scenes/Factory Level/Gravity Level.unity
+    guid: 4dd7f3b3f7fb26444be78b30a7175d5e
   - enabled: 1
     path: Assets/Scenes/Factory Level/Rotate Level.unity
     guid: 79cd9edbd26a93146a479e49d13ba1db
@@ -83,4 +83,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Space Level/Level19.unity
     guid: 535cd7f18faef7b4c9a137ad084b6a7c
+  - enabled: 1
+    path: Assets/Scenes/MenuLevels/EndScene.unity
+    guid: 076228f7f07f95844aa9bea97312156d
   m_configObjects: {}

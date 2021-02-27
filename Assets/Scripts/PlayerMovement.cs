@@ -5,8 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-	[Range(0.0f, 10.0f)] // create a slider in the editor and set limits on moveSpeed
-	public float moveSpeed = 3f;
+	//[Range(0.0f, 10.0f)] // create a slider in the editor and set limits on moveSpeed - test value : 0.54
+	//public float moveSpeed = 3f;
+
+	[Range(0.0f, 100.0f)] // create a slider in the editor and set limits on moveForce
+	public float moveForce = 15f;
 
 	public float jumpForce = 600f;
 
@@ -16,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
 	// Transform just below feet for checking if player is grounded
 	public Transform groundCheck;
 	public AudioClip thud;
+	public GameObject jumpPrefab;
 
 
 
@@ -122,7 +126,10 @@ public class PlayerMovement : MonoBehaviour
 		if (_vx != 0)
 		{
 			anim.SetBool("isRunning", true);
-			FMODUnity.RuntimeManager.PlayOneShot("event:/Footstep");
+			if(GameManager.gm.timeScale < 1f)
+				FMODUnity.RuntimeManager.PlayOneShot("event:/Slow Footstep");
+			else
+				FMODUnity.RuntimeManager.PlayOneShot("event:/Footstep");
 		}
 		else
 			anim.SetBool("isRunning", false);
@@ -130,7 +137,8 @@ public class PlayerMovement : MonoBehaviour
 
 		Vector2 dir = new Vector2(0f,1f);
 		if (!GameManager.gm.isCircularLevel)
-			rgbd.velocity = new Vector2(_vx * moveSpeed, _vy);
+			rgbd.AddForce(_vx * moveForce * new Vector2(1f, 0f));
+			//rgbd.velocity = new Vector2(_vx * moveSpeed, _vy);
 		else
 		{
 			if (GameManager.gm.center == null)
@@ -141,12 +149,24 @@ public class PlayerMovement : MonoBehaviour
 				dir = dir.normalized;
 				if (dir.magnitude != 0)
 				{
-					float sin_theta = dir.y / dir.magnitude;
-					float cos_theta = dir.x / dir.magnitude;
-					Vector2 vel = new Vector2();
-					vel.x = rgbd.velocity.x + _vx * moveSpeed * sin_theta;
-					vel.y = rgbd.velocity.y - _vx * moveSpeed * cos_theta;
-					rgbd.velocity = vel;
+					//float sin_theta = dir.y / dir.magnitude;
+					//float cos_theta = dir.x / dir.magnitude;
+					//Debug.Log($"{cos_theta} , {sin_theta}");
+					//Vector2 vel = new Vector2();
+
+					//Vector2 prevVel = rgbd.velocity;
+					//float k = prevVel.x * cos_theta + prevVel.y * sin_theta + Time.deltaTime * rgbd.gravityScale;
+					//vel.x = k * cos_theta - _vx * moveSpeed * sin_theta;
+					//vel.y = -_vx * cos_theta + k * sin_theta;
+
+
+
+					////vel.x = rgbd.velocity.x + _vx * moveSpeed * sin_theta;
+					////vel.y = rgbd.velocity.y - _vx * moveSpeed * cos_theta;
+					//rgbd.velocity = vel;
+
+					Vector2 forcedir =  Vector3.Cross(dir, new Vector3(0f, 0f, 1f));
+					rgbd.AddForce(forcedir *_vx * moveForce);
 					RotatePlayer(dir);
 				}
 			}
@@ -240,6 +260,13 @@ public class PlayerMovement : MonoBehaviour
 		anim.SetTrigger("jumpTrigger");
 		if (GameManager.gm.isGravityReversed)
 			dir = -dir;
+		Debug.Log($"{groundCheck.rotation}");
+		if(jumpPrefab != null)
+			Instantiate(jumpPrefab, groundCheck.position, groundCheck.rotation);
+		if (GameManager.gm.timeScale < 1f)
+			FMODUnity.RuntimeManager.PlayOneShot("event:/Slow Jump");
+		else
+			FMODUnity.RuntimeManager.PlayOneShot("event:/Jump");
 		// reset current vertical motion to 0 prior to jump
 		//_vy = 0f;
 		//float tan_theta = dir.y / dir.x;
@@ -265,7 +292,10 @@ public class PlayerMovement : MonoBehaviour
 		{
 			anim.SetBool("isDead", true);
 			anim.SetTrigger("deadTrigger");
-			FMODUnity.RuntimeManager.PlayOneShot("event:/Hurt");
+			if (GameManager.gm.timeScale < 1f)
+				FMODUnity.RuntimeManager.PlayOneShot("event:/Slow Hurt");
+			else
+				FMODUnity.RuntimeManager.PlayOneShot("event:/Hurt");
 			rgbd.velocity = new Vector2(0f, 0f);
 			transform.GetComponent<BoxCollider2D>().enabled = false;
 			GameManager.gm.LevelSelect(SceneManager.GetActiveScene().buildIndex, 1.2f);
@@ -281,7 +311,10 @@ public class PlayerMovement : MonoBehaviour
 			Debug.Log("Victory");
 			anim.SetTrigger("victoryTrigger");
 			anim.SetBool("isVictory", true);
-			FMODUnity.RuntimeManager.PlayOneShot("event:/Goal");
+			if (GameManager.gm.timeScale < 1f)
+				FMODUnity.RuntimeManager.PlayOneShot("event:/Slow Goal");
+			else
+				FMODUnity.RuntimeManager.PlayOneShot("event:/Goal");
 			ResetPlayer();
 			if (SceneManager.GetActiveScene().buildIndex + 1 < SceneManager.sceneCountInBuildSettings)
 				GameManager.gm.LevelSelect(SceneManager.GetActiveScene().buildIndex + 1, 1.5f);

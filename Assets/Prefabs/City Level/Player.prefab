@@ -149,6 +149,8 @@ MonoBehaviour:
     m_Bits: 256
   groundCheckLeft: {fileID: 49873512}
   groundCheckRight: {fileID: 2277528563528967806}
+  jumpPrefab: {fileID: 5022859507406038463, guid: 87fce715576586f4fa1c692dd883b5ba,
+    type: 3}
   isGrounded: 1
   hangTime: 0.05
 --- !u!95 &470516504
