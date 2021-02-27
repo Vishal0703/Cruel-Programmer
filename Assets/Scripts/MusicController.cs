@@ -38,7 +38,7 @@ public class MusicController : MonoBehaviour
             StartCoroutine(WaitforFMODBanksLoad(3f));
             playerInput = true;
         }
-        if (SceneManager.GetActiveScene().buildIndex >= 0 && SceneManager.GetActiveScene().buildIndex <= 1) //this scene range is for both the menu and the level; the more upbeat music will start when you enter a level 
+        if ((SceneManager.GetActiveScene().buildIndex >= 0 && SceneManager.GetActiveScene().buildIndex <= 1) || SceneManager.GetActiveScene().buildIndex == 26) //this scene range is for both the menu and the level; the more upbeat music will start when you enter a level 
         {
             //Debug.Log("menu");
             instance.setParameterByName("Level", 0f);
