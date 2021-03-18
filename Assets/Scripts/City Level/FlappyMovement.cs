@@ -13,6 +13,29 @@ public class FlappyMovement : MonoBehaviour
     bool start = false;
 
 
+    public Controls controls;
+    public bool jump;
+
+    private void Awake()
+    {
+        controls = new Controls();
+        controls.Player.Jump.performed += _ => Jump(true);
+        controls.Player.Jump.canceled += _ => Jump(false);
+    }
+
+    private void OnEnable()
+    {
+        controls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Disable();
+    }
+    private void Jump(bool isJumping)
+    {
+        jump = isJumping;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -28,8 +51,9 @@ public class FlappyMovement : MonoBehaviour
         Vector3 movement = new Vector3(1f, 0f, 0f);
         transform.position += movement * Time.deltaTime * moveSpeed;
 
-        if (Input.GetButtonDown("Jump"))
+        if (jump)
         {
+            jump = false;
             if (jumpPrefab != null)
                 Instantiate(jumpPrefab, (groundCheckLeft.position + groundCheckRight.position) / 2, Quaternion.identity);
             FMODUnity.RuntimeManager.PlayOneShot("event:/Jump");

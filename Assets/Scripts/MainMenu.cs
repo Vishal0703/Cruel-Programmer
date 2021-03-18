@@ -7,6 +7,29 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject canvas_toenable;
     public GameObject canvas_todisable;
+    public Controls controls;
+    private bool jump;
+
+    private void Awake()
+    {
+        controls = new Controls();
+        controls.UI.Space.performed += _ => Jump(true);
+    }
+
+    private void OnEnable()
+    {
+        controls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Disable();
+    }
+
+    private void Jump(bool isJumping)
+    {
+        jump = isJumping;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -16,8 +39,9 @@ public class MainMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (jump)
         {
+            jump = false;
             canvas_toenable.SetActive(true);
             canvas_todisable.SetActive(false);
         }

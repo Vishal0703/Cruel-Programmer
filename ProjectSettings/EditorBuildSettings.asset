@@ -86,4 +86,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MenuLevels/EndScene.unity
     guid: 076228f7f07f95844aa9bea97312156d
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 2b56c48a2b3090541bf8adf6af969c09,
+      type: 2}

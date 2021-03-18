@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +13,50 @@ public class CheckCollision : MonoBehaviour
     bool isVictory = false;
     [SerializeField] public bool isPause;
     [SerializeField] bool isManualPause = false;
+    Controls controls;
+    private bool reload;
+    private bool pause;
+    private bool levelLoad;
+    private bool resumeSpecial;
 
+    private void Awake()
+    {
+        controls = new Controls();
+        controls.UI.Reload.performed += _ => Reload();
+        controls.UI.LevelLoader.performed += _ => LevelLoad();
+        controls.UI.Pause.performed += _ => Pause();
+        controls.UI.ResumeSpecial.performed += _ => ResumeSpecial();
+    }
+
+    private void ResumeSpecial()
+    {
+        resumeSpecial = true;
+    }
+
+    private void Pause()
+    {
+        pause = true;
+    }
+
+    private void LevelLoad()
+    {
+        levelLoad = true;
+    }
+
+    private void Reload()
+    {
+        reload = true;
+    }
+
+    private void OnEnable()
+    {
+        controls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Disable();
+    }
     private void Start()
     {
         sceneName = SceneManager.GetActiveScene().name;
@@ -23,25 +67,29 @@ public class CheckCollision : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.L))
+        if(levelLoad)
         {
+            levelLoad = false;
             SceneManager.LoadScene("LevelLoader");
         }
-        if (Input.GetKeyDown(KeyCode.R))
+        if (reload)
         {
+            reload = false;
             string sceneName = SceneManager.GetActiveScene().name;
             SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
         }
 
-        else if (Input.GetKeyDown(KeyCode.P))
+        else if (pause)
         {
+            pause = false;
             if (isManualPause)
                 ResumeGame();
             else
                 ManualPauseGame();
         }
-        else if (Input.anyKeyDown)
+        else if (resumeSpecial)
         {
+            resumeSpecial = false;
             if (isPause)
             {
                 ResumeGame();

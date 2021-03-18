@@ -10,7 +10,21 @@ public class Wrapping : MonoBehaviour
     bool isWrappingY = false;
     [SerializeField] float speed = 50f;
     [SerializeField] float fakeGravity = 20f;
+    Controls controls;
 
+    private void Awake()
+    {
+        controls = new Controls();
+    }
+    private void OnEnable()
+    {
+        controls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Disable();
+    }
     void Start()
     {
         renderers = GetComponentsInChildren<Renderer>();
@@ -38,7 +52,7 @@ public class Wrapping : MonoBehaviour
     {
         rb.velocity = new Vector2(0f, -fakeGravity);
         ScreenWrap();
-        float xMovement = Input.GetAxisRaw("Horizontal");
+        float xMovement = controls.Player.HorizontalMove.ReadValue<float>();
         Vector2 movement = new Vector2(xMovement * speed * Time.deltaTime, 0f);
         transform.Translate(movement);
     }

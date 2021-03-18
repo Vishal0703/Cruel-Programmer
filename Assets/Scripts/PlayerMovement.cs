@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(PlayerInput))]
 public class PlayerMovement : MonoBehaviour
 {
 	//[Range(0.0f, 10.0f)] // create a slider in the editor and set limits on moveSpeed - test value : 0.54
@@ -45,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
 	AudioSource audio;
 	Rigidbody2D rgbd;
 	Animator anim;
+	PlayerInput playerInput;
 	Vector3 orig_pos;
 	// store the layer the player is on (setup in Awake)
 	int _playerLayer;
@@ -68,6 +71,8 @@ public class PlayerMovement : MonoBehaviour
 
 		// determine the platform's specified layer
 		_platformLayer = LayerMask.NameToLayer("Platform");
+
+		playerInput = GetComponent<PlayerInput>();
 	}
 
     private void Start()
@@ -86,7 +91,9 @@ public class PlayerMovement : MonoBehaviour
 			return;
 
 		// determine horizontal velocity change based on the horizontal input
-		_vx = Input.GetAxisRaw("Horizontal");
+		//_vx = Input.GetAxisRaw("Horizontal");
+		_vx = playerInput.controls.Player.HorizontalMove.ReadValue<float>();
+		//Debug.Log($"horizontal input : {_vx}");
 
 		// Determine if running based on the horizontal movement
 		if (_vx != 0)
@@ -176,23 +183,25 @@ public class PlayerMovement : MonoBehaviour
 		{
 			if (GameManager.gm.isJumpAvailable)
 			{
-				if (isGrounded && Input.GetButtonDown("Jump")) // If grounded AND jump button pressed, then allow the player to jump
+				if (isGrounded && playerInput.jump) // If grounded AND jump button pressed, then allow the player to jump
 				{
+					playerInput.jump = false;
 					DoJump(dir);
 				}
 
 				// If the player stops jumping mid jump and player is not yet falling
 				// then set the vertical velocity to 0 (he will start to fall from gravity)
-				if (Input.GetButtonUp("Jump") && _vy > 0f)
-				{
-					_vy = -1f;
-				}
+				//if (Input.GetButtonUp("Jump") && _vy > 0f)
+				//{
+				//	_vy = -1f;
+				//}
 			}
 		}
 		else
         {
-			if (Input.GetButtonDown("Jump"))
+			if (playerInput.jump)
 			{
+				playerInput.jump = false;
 				GameManager.gm.isGravityReversed = !GameManager.gm.isGravityReversed;
 			}
 		}

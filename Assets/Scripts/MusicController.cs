@@ -11,6 +11,29 @@ public class MusicController : MonoBehaviour
     public int topLevel = 0;
     [FMODUnity.EventRef]
     public string fmodEvent;
+    Controls controls;
+    private bool resumeSpecial;
+
+    private void Awake()
+    {
+        controls = new Controls();
+        controls.UI.ResumeSpecial.performed += _ => ResumeSpecial(true);
+    }
+
+    private void OnEnable()
+    {
+        controls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Disable();
+    }
+
+    private void ResumeSpecial(bool isResuming)
+    {
+        resumeSpecial = isResuming;
+    }
 
     void Start()
     {
@@ -32,8 +55,9 @@ public class MusicController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerInput == false && Input.anyKeyDown)
+        if (playerInput == false && resumeSpecial)
         {
+            resumeSpecial = false;
             //ResumeAudio();
             StartCoroutine(WaitforFMODBanksLoad(3f));
             playerInput = true;

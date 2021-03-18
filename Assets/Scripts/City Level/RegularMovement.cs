@@ -21,6 +21,30 @@ public class RegularMovement : MonoBehaviour
     [SerializeField] float hangTime = .2f;
     float hangCounter;
 
+    public Controls controls;
+    private bool jump;
+
+    private void Awake()
+    {
+        controls = new Controls();
+        controls.Player.Jump.performed += _ => Jump(true);
+        controls.Player.Jump.canceled += _ => Jump(false);
+    }
+
+    private void OnEnable()
+    {
+        controls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Disable();
+    }
+
+    private void Jump(bool isJumping)
+    {
+        jump = isJumping;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +57,7 @@ public class RegularMovement : MonoBehaviour
     {
         if (Time.timeScale == 0f)
             return;
-        xMovement = Input.GetAxisRaw("Horizontal");
+        xMovement = controls.Player.HorizontalMove.ReadValue<float>();
         yMovement = rb.velocity.y;
         rb.velocity = new Vector2(xMovement * speed, yMovement);
 
@@ -65,8 +89,9 @@ public class RegularMovement : MonoBehaviour
             hangCounter -= Time.deltaTime;
         }
 
-        if (hangCounter > 0 && Input.GetButtonDown("Jump"))
+        if (hangCounter > 0 && jump)
         {
+            jump = false;
             if (jumpPrefab != null)
                 Instantiate(jumpPrefab, (groundCheckLeft.position + groundCheckRight.position) / 2, Quaternion.identity);
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);

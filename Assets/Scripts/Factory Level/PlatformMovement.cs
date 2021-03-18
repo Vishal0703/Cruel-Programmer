@@ -5,18 +5,28 @@ using UnityEngine;
 public class PlatformMovement : MonoBehaviour
 {
     [SerializeField] float speed = 50f;
+    Controls controls;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        controls = new Controls();
+    }
+
+    private void OnEnable()
+    {
+        controls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Disable();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float xMovement = Input.GetAxisRaw("Horizontal");
-        float yMovement = Input.GetAxisRaw("Vertical");
+        float xMovement = controls.Player.HorizontalMove.ReadValue<float>();
+        float yMovement = controls.Player.VerticalMove.ReadValue<float>();
         Vector2 movement = new Vector2(xMovement * speed * Time.deltaTime, yMovement * speed * Time.deltaTime);
         transform.Translate(movement);
     }

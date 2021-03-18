@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.U2D;
@@ -31,13 +32,48 @@ public class GameManager : MonoBehaviour
     bool isPaused = false;
 
     AudioSource audio;
+    Controls controls;
+    private bool reload;
+    private bool pause;
+    private bool levelLoad;
+
     private void Awake()
     {
         if(gm==null)
         {
             gm = this;
         }
+        controls = new Controls();
+        controls.UI.Reload.performed += _ => Reload();
+        controls.UI.LevelLoader.performed += _ => LevelLoad();
+        controls.UI.Pause.performed += _ => Pause();
     }
+
+    private void OnEnable()
+    {
+        controls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Disable();
+    }
+
+    private void Pause()
+    {
+        pause = true;
+    }
+
+    private void LevelLoad()
+    {
+        levelLoad = true;
+    }
+
+    private void Reload()
+    {
+        reload = true;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,12 +84,14 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L))
+        if (levelLoad)
         {
+            levelLoad = false;
             SceneManager.LoadScene("LevelLoader");
         }
-        if (Input.GetKeyDown(KeyCode.P))
+        if (pause)
         {
+            pause = false;
             if (!isPaused)
                 DilateTime(0f);
             else
@@ -61,8 +99,9 @@ public class GameManager : MonoBehaviour
 
             isPaused = !isPaused;
         }
-        if (Input.GetKeyDown(KeyCode.R))
+        if (reload)
         {
+            reload = false;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 

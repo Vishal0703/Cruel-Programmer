@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1256084239}
   - component: {fileID: 5526919111112134814}
   - component: {fileID: 1336748855417639842}
+  - component: {fileID: -7176374009484022523}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -148,7 +149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b85fe7051c25c224e81a8704acdfa2dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.54
   moveForce: 25
   jumpForce: 600
   whatIsGround:
@@ -286,6 +286,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-7176374009484022523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4395056913637984789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f21ba3253d71c5e4c824a0b47d49b26f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jump: 0
 --- !u!1 &4395056913966952377
 GameObject:
   m_ObjectHideFlags: 0
