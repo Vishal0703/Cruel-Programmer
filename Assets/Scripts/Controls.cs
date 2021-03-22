@@ -20,7 +20,7 @@ public class @Controls : IInputActionCollection, IDisposable
             ""actions"": [
                 {
                     ""name"": ""HorizontalMove"",
-                    ""type"": ""Value"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""90e0225a-281e-4c4c-b35a-754e43c6eeb6"",
                     ""expectedControlType"": ""Axis"",
                     ""processors"": """",
@@ -36,7 +36,7 @@ public class @Controls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""VerticalMove"",
-                    ""type"": ""Value"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""bf322e0d-e3c5-45b6-b196-a195a61ef3cf"",
                     ""expectedControlType"": ""Axis"",
                     ""processors"": """",

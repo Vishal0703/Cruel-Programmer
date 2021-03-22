@@ -37,7 +37,9 @@ public class MusicController : MonoBehaviour
 
     void Start()
     {
-        //StartCoroutine(WaitforFMODBanksLoad()); 
+        ResumeAudio();
+        instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
+        instance.start();
     }
 
     IEnumerator WaitforFMODBanksLoad(float time=2f)
@@ -55,13 +57,19 @@ public class MusicController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerInput == false && resumeSpecial)
-        {
-            resumeSpecial = false;
-            //ResumeAudio();
-            StartCoroutine(WaitforFMODBanksLoad(3f));
-            playerInput = true;
-        }
+
+        //Enable the below comments and disable start for WebGL...
+
+        //if (playerInput == false && resumeSpecial)
+        //{
+        //    resumeSpecial = false;
+        //    //ResumeAudio();
+        //    StartCoroutine(WaitforFMODBanksLoad(3f));
+        //    playerInput = true;
+        //}
+        
+        
+
         if ((SceneManager.GetActiveScene().buildIndex >= 0 && SceneManager.GetActiveScene().buildIndex <= 1) || SceneManager.GetActiveScene().buildIndex == 26) //this scene range is for both the menu and the level; the more upbeat music will start when you enter a level 
         {
             //Debug.Log("menu");

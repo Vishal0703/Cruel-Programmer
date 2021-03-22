@@ -147,6 +147,11 @@ public class GameManager : MonoBehaviour
         StartCoroutine(WaitforLoadingNextScene(name));
     }
 
+    public void LevelSelectWithoutDelay(string name)
+    {
+        StartCoroutine(WaitforLoadingNextScene(name, 0f));
+    }
+
     public void LevelSelect(int index, float timetoWait = 1f)
     {
         StartCoroutine(WaitforLoadingNextScene(index, timetoWait));
