@@ -165,6 +165,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator WaitforLoadingNextScene(int sceneIndex, float timetoWait = 1f)
     {
+        Physics2D.gravity = -Vector2.up * 9.8f;
         yield return new WaitForSeconds(timetoWait);
         Debug.Log($"Scene number is {sceneIndex}");
         SceneManager.LoadScene(sceneIndex);
@@ -172,6 +173,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator WaitforLoadingNextScene(string sceneName, float timetoWait = 1f)
     {
+        Physics2D.gravity = -Vector2.up * 9.8f;
         yield return new WaitForSeconds(timetoWait);
         Debug.Log($"Scene name is {sceneName}");
         SceneManager.LoadScene(sceneName);

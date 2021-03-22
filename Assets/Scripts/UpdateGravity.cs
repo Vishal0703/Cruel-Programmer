@@ -24,6 +24,5 @@ public class UpdateGravity : MonoBehaviour
         {
             Physics2D.gravity *= -1f;
         }
-        
     }
 }
